@@ -17,6 +17,7 @@
         android:orientation="vertical" >
 
         <edu.upenn.cis350.ExhibitView
+            android:id="@+id/exhibitView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1" 

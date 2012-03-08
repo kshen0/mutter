@@ -20,11 +20,17 @@ public final class R {
         public static final int grid_view=0x7f020006;
         public static final int ic_launcher=0x7f020007;
         public static final int naboo=0x7f020008;
-        public static final int your=0x7f020009;
+        public static final int sample_exhibit=0x7f020009;
+        public static final int your=0x7f02000a;
+    }
+    public static final class id {
+        public static final int closebutton=0x7f050001;
+        public static final int exhibitView=0x7f050000;
     }
     public static final class layout {
         public static final int main=0x7f030000;
         public static final int pointselectdialog=0x7f030001;
+        public static final int pointselectedlayout=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040001;
