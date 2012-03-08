@@ -31,7 +31,7 @@ public class ExhibitView extends View {
 	}
 
 	public ExhibitView(Context c, AttributeSet a) {
-		super(c);
+		super(c, a);
 		context = c;
 		canvas = new Canvas();
 		Drawable bg = Drawable.createFromPath("@drawable/floorplan");
