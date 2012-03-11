@@ -5,7 +5,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.PictureDrawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
@@ -13,15 +15,15 @@ import android.widget.Toast;
 
 public class Point extends ImageView{
 	
-	private float x;
-	private float y;
-	private float radius;
+	private int x;
+	private int y;
+	private int radius;
 	private Drawable icon;
 	private Context context;
 	
 	public Point(Context c) {
 		super(c);
-		icon = Drawable.createFromPath("@drawable/button");
+		icon = getResources().getDrawable(R.drawable.button_off_small);
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;
@@ -30,8 +32,8 @@ public class Point extends ImageView{
 	}
 	
 	public Point(Context c, AttributeSet a) {
-		super(c);
-		icon = Drawable.createFromPath("@drawable/button");
+		super(c, a);
+		icon = getResources().getDrawable(R.drawable.button_off_small);
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;
@@ -39,18 +41,20 @@ public class Point extends ImageView{
 		context = c;
 	}
 
-	public void setValues(float x, float y, float radius){
+	public void setValues(int x, int y, int radius){
 		this.x = x;
 		this.y = y;
 		this.radius = radius;
 	}
 	
 	public void draw(Canvas canvas){
-		//icon.setBounds(x, y, x+width, y+height);
-		//icon.draw(canvas);
+		icon.setBounds(x, y, x+radius*2, y+radius*2);
+		icon.draw(canvas);
+		/*
 		Paint paint = new Paint();
 		paint.setColor(Color.BLUE);
 		canvas.drawCircle(x, y, radius, paint);
+		*/
 	}
 	
 //	public boolean onTouchEvent(MotionEvent event){

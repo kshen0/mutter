@@ -20,7 +20,7 @@ public class MutterActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
+        int a = R.id.exhibitView;
         exhibitView = (ExhibitView) findViewById(R.id.exhibitView);
         //why doesn't this work??
         
