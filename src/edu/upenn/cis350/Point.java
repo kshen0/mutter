@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PictureDrawable;
@@ -17,7 +18,7 @@ public class Point extends ImageView{
 	
 	private int x;
 	private int y;
-	private int radius;
+	private int side;
 	private Drawable icon;
 	private Context context;
 	
@@ -27,7 +28,7 @@ public class Point extends ImageView{
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;
-		radius = 0;
+		side = 0;
 		context = c;
 	}
 	
@@ -37,18 +38,18 @@ public class Point extends ImageView{
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;
-		radius = 0;
+		side = 0;
 		context = c;
 	}
 
-	public void setValues(int x, int y, int radius){
+	public void setValues(int x, int y, int s){
 		this.x = x;
 		this.y = y;
-		this.radius = radius;
+		this.side = s;
 	}
 	
 	public void draw(Canvas canvas){
-		icon.setBounds(x, y, x+radius*2, y+radius*2);
+		icon.setBounds(x, y, x+side, y+side);
 		icon.draw(canvas);
 		/*
 		Paint paint = new Paint();
@@ -82,17 +83,20 @@ public class Point extends ImageView{
 //		
 //	}
 	
-	public float getX(){
+	public int getX(){
 		return x;
 	}
 	
-	public float getY(){
+	public int getY(){
 		return y;
 	
 	}
 	
-	public float getRadius(){
-		return radius;
+	public float getSide(){
+		return side;
 	}
 	
+	public Rect getBounds() {
+		return icon.getBounds();
+	}
 }

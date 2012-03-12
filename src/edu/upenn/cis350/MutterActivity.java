@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -35,34 +37,20 @@ public class MutterActivity extends Activity {
     	//if (points == null) return false;
 		int action = event.getAction();
 		if (action == MotionEvent.ACTION_DOWN) {
-			float touchX = event.getX();
-			float touchY = event.getY();
-//			if (dialogUp == true) {
-//				dialog.cancel();
-//				dialogUp = false;
-//				return true;
-//			} else {
-
-				for (int i = 0; i < points.size(); i++) {
-					Point point = points.get(i);
-					float x = point.getX();
-					float y = point.getY();
-					float radius = point.getRadius();
-					//if ((touchX < x + radius) && (touchX > x - radius)
-						//	&& (touchY < y + radius) && (touchY > y - radius)) {
-						Intent intent = new Intent(this, SelectPointActivity.class);
-						startActivity(intent);
-						//setDialog();
-						//dialog.show();
-						//dialogUp = true;
-						
-						
-						return true;
-
-					}
+			int touchX = (int)event.getX();
+			int touchY = (int)event.getY() - 109;
+			for (Point point : points) {
+				Rect r = point.getBounds();
+				Log.v("rect dimensions", "bounding box = " + r.left + ", " + r.top + ", " + r.right + ", " + r.bottom);
+				Log.v("point dimensions", "x, y = " + touchX + ", " + touchY);
+				if(point.getBounds().contains(touchX, touchY)) {
+					Intent intent = new Intent(this, SelectPointActivity.class);
+					startActivity(intent);			
+					return true;
 				}
-			//}
-		//}
+			}
+		}
 		return false;
 	}
 }
+   
