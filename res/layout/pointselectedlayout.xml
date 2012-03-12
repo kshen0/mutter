@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/parchment"
+    android:layout_height="wrap_content"
     >
-    
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-		android:src="@drawable/aasoldier" />
-    
-    <TextView 
-        android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:text="@string/lipsum" 
-		android:textColor="#000" />
-        
-    <Button
-        android:id="@+id/closebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Close" 
-        android:onClick="onCloseClick"/>
-    
-    
-    
-    
-    </LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/parchment"
+	    >
+	    
+	    <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="0.25in"
+	        android:paddingRight="0.25in"
+	        android:layout_gravity="center_horizontal"
+			android:src="@drawable/aasoldier" />
+	    
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/lipsum"
+	        android:paddingLeft="12dp"
+	        android:paddingRight="12dp"
+	        android:textColor="#000" />
+	        
+	    <Button
+	        android:id="@+id/closebutton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Close" 
+	        android:onClick="onCloseClick"/>
+	    </LinearLayout>
+    </ScrollView>

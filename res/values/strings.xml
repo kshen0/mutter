@@ -4,6 +4,7 @@
     <string name="hello">Welcome to the Mutter Museum</string>
     <string name="app_name">Mutter Museum</string>
     <string name="ok">OK</string>
-	<string name="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet odio in odio consequat congue. Mauris vehicula lectus at velit congue convallis. Sed at ante ipsum, ac gravida sem. Donec quis turpis et arcu ornare lacinia. Integer tristique, diam at consequat blandit, nunc lacus dapibus neque, sit amet egestas eros ligula eu mauris. Donec at nisi odio. Nulla ut metus odio.</string>
+	<string name="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet odio in odio consequat congue. Mauris vehicula lectus at velit congue convallis. Sed at ante ipsum, ac gravida sem. Donec quis turpis et arcu ornare lacinia. Integer tristique, diam at consequat blandit, nunc lacus dapibus neque, sit amet egestas eros ligula eu mauris. Donec at nisi odio. Nulla ut metus odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet odio in odio consequat congue. Mauris vehicula lectus at velit congue convallis. Sed at ante ipsum, ac gravida sem. Donec quis turpis et arcu ornare lacinia. Integer tristique, diam at consequat blandit, nunc lacus dapibus neque, sit amet egestas eros ligula eu mauris. Donec at nisi odio. Nulla ut metus odio.</string>
+	<string name="lipsum2">Lorem ipsum blah blah blah</string>
 	<string name="x">An African American solider.</string>
 </resources>
