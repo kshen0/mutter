@@ -21,6 +21,7 @@ public class Point extends ImageView{
 	private int side;
 	private Drawable icon;
 	private Context context;
+	private int layoutType;
 	
 	public Point(Context c) {
 		super(c);
@@ -30,6 +31,7 @@ public class Point extends ImageView{
 		y = 0;
 		side = 0;
 		context = c;
+		layoutType = 0;
 	}
 	
 	public Point(Context c, AttributeSet a) {
@@ -40,12 +42,20 @@ public class Point extends ImageView{
 		y = 0;
 		side = 0;
 		context = c;
+		layoutType = 0;
 	}
 
 	public void setValues(int x, int y, int s){
 		this.x = x;
 		this.y = y;
 		this.side = s;
+	}
+	
+	public void setLayoutType(int i){
+		layoutType = i;
+	}
+	public int getLayoutType(){
+		return layoutType;
 	}
 	
 	public void draw(Canvas canvas){

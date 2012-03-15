@@ -22,6 +22,10 @@
             android:name=".SelectPointActivity"
             android:label="Select Point"
         />
+        <activity
+            android:name=".PointActivityTwo"
+            android:label="Point Activity Two"
+            />
     </application>
 
 </manifest>
