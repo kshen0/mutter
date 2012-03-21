@@ -20,8 +20,6 @@ public class ExhibitView extends View {
 	private Canvas canvas;
 	private Context context;
 	private HashMap<Point, Integer> points;
-	private boolean dialogUp;
-	private Dialog dialog;
 
 	public ExhibitView(Context con) {
 		super(con);
@@ -40,21 +38,16 @@ public class ExhibitView extends View {
 	private void initialize(Context con) {
 		this.context = con;
 		canvas = new Canvas();
-		dialogUp = false;
-		dialog = new Dialog(context);
 		
 		// key: point, value: layout id(?)
 		points = new HashMap<Point, Integer>();
 	}
 
 	private void setUpPoints() {
-		Point p1 = new Point(context);
-		p1.setValues(253, 294, 20);
+		Point p1 = new Point(context, 253, 294, 20);
 		points.put(p1, R.layout.pointselectedlayout);
 		
-		Point p2 = new Point(context);
-		p2.setValues(230,500,20);
-		p2.setLayoutType(0);
+		Point p2 = new Point(context, 230, 490, 20);
 		points.put(p2, R.layout.pointlayouttwo);
 	}
 	
@@ -62,13 +55,6 @@ public class ExhibitView extends View {
 		for (Point p : points.keySet()) {
 			p.draw(canvas);
 		}
-	}
-
-	public void setDialog() {
-		dialog = new Dialog(context);
-		dialog.setContentView(R.layout.pointselectdialog);
-		dialog.setTitle("Exhibit Name");
-
 	}
 	
 	public HashMap<Point, Integer> getPoints(){

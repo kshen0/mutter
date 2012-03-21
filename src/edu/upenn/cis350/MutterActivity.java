@@ -22,19 +22,11 @@ public class MutterActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		int a = R.id.exhibitView;
 		exhibitView = (ExhibitView) findViewById(R.id.exhibitView);
-		// why doesn't this work??
-
 		points = exhibitView.getPoints();
-
 	}
 
 	public boolean onTouchEvent(MotionEvent event) {
-		exhibitView = (ExhibitView) findViewById(R.id.exhibitView);
-		// if (exhibitView == null) return false;
-		points = exhibitView.getPoints();
-		// if (points == null) return false;
 		int action = event.getAction();
 		if (action == MotionEvent.ACTION_DOWN) {
 			int touchX = (int) event.getX();
@@ -48,19 +40,6 @@ public class MutterActivity extends Activity {
 					Intent intent = new Intent(this, SelectPointActivity.class);
 					intent.putExtra("layout", points.get(point));
 					startActivity(intent);
-					/*
-					if (point.getLayoutType() == 0) {
-						Intent intent = new Intent(this,
-								SelectPointActivity.class);
-						startActivity(intent);
-						return true;
-					}
-					else if (point.getLayoutType() == 1){
-						Intent intent = new Intent(this, PointActivityTwo.class);
-						startActivity(intent);
-						return true;
-					}
-					*/
 				}
 			}
 		}

@@ -21,19 +21,18 @@ public class Point extends ImageView{
 	private int side;
 	private Drawable icon;
 	private Context context;
-	private int layoutType;
 	
-	public Point(Context c) {
+	public Point(Context c, int x, int y, int side) {
 		super(c);
 		icon = getResources().getDrawable(R.drawable.button_off_small);
 		setImageDrawable(icon);
-		x = 0;
-		y = 0;
-		side = 0;
+		this.x = x;
+		this.y = y;
+		this.side = side;
 		context = c;
-		layoutType = 0;
 	}
 	
+	// why is this necessary?
 	public Point(Context c, AttributeSet a) {
 		super(c, a);
 		icon = getResources().getDrawable(R.drawable.button_off_small);
@@ -42,7 +41,6 @@ public class Point extends ImageView{
 		y = 0;
 		side = 0;
 		context = c;
-		layoutType = 0;
 	}
 
 	public void setValues(int x, int y, int s){
@@ -51,47 +49,10 @@ public class Point extends ImageView{
 		this.side = s;
 	}
 	
-	public void setLayoutType(int i){
-		layoutType = i;
-	}
-	public int getLayoutType(){
-		return layoutType;
-	}
-	
 	public void draw(Canvas canvas){
 		icon.setBounds(x, y, x+side, y+side);
 		icon.draw(canvas);
-		/*
-		Paint paint = new Paint();
-		paint.setColor(Color.BLUE);
-		canvas.drawCircle(x, y, radius, paint);
-		*/
 	}
-	
-//	public boolean onTouchEvent(MotionEvent event){
-//		int action = event.getAction();
-//		float touchx = event.getX();
-//		float touchy = event.getY();
-//		if ((touchx < x + radius) && (touchx > x - radius) && (touchy < y + radius) && (touchy > y - radius)){
-//			Dialog dialog = makeDialog();
-//			dialog.show();
-//			return true;
-//		}
-//		else{
-//			Dialog dialog = makeDialog();
-//			dialog.show();
-//			return false;
-//		}
-//		
-//	}
-	
-//	public Dialog makeDialog(){
-//		 Dialog dialog = new Dialog(context);
-//         dialog.setContentView(R.layout.pointselectdialog);
-//         dialog.setTitle("Exhibit Name");
-//         return dialog;
-//		
-//	}
 	
 	public int getX(){
 		return x;
@@ -108,5 +69,9 @@ public class Point extends ImageView{
 	
 	public Rect getBounds() {
 		return icon.getBounds();
+	}
+	
+	public String toString() {
+		return "(" + x + ", " + y + ")";
 	}
 }
