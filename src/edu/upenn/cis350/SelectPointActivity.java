@@ -8,7 +8,8 @@ public class SelectPointActivity extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pointselectedlayout);
+        Bundle b = getIntent().getExtras();
+        setContentView(b.getInt("layout"));
 	}
 	
 	public void onCloseClick(View view){
