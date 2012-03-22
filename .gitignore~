@@ -1,0 +1,4 @@
+*.dex
+*.apk
+*.ap_
+gen/
