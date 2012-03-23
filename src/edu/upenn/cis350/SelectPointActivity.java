@@ -19,6 +19,7 @@ public class SelectPointActivity extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         setContentView(R.layout.pointselectedlayout);
         
         mp = MediaPlayer.create(SelectPointActivity.this, R.raw.a1);
@@ -108,6 +109,10 @@ public class SelectPointActivity extends Activity {
                 }
             }
         });
+=======
+        Bundle b = getIntent().getExtras();
+        setContentView(b.getInt("layout"));
+>>>>>>> 9fc8705d74cbce0a048da5a547c5ace81a5d7e0a
 	}
 	
 	public void onCloseClick(View view){
