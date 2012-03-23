@@ -25,7 +25,7 @@ public class Point extends ImageView{
 	
 	public Point(Context c) {
 		super(c);
-		icon = getResources().getDrawable(R.drawable.button_off_small);
+		icon = getResources().getDrawable(R.drawable.button_off_small_padded);
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;
@@ -36,7 +36,7 @@ public class Point extends ImageView{
 	
 	public Point(Context c, AttributeSet a) {
 		super(c, a);
-		icon = getResources().getDrawable(R.drawable.button_off_small);
+		icon = getResources().getDrawable(R.drawable.button_off_small_padded);
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;

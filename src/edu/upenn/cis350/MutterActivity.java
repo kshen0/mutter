@@ -38,7 +38,7 @@ public class MutterActivity extends Activity {
 		int action = event.getAction();
 		if (action == MotionEvent.ACTION_DOWN) {
 			int touchX = (int) event.getX();
-			int touchY = (int) event.getY() - 109;
+			int touchY = (int) event.getY() - 77;
 			for (Point point : points) {
 				Rect r = point.getBounds();
 				Log.v("rect dimensions", "bounding box = " + r.left + ", "

@@ -45,12 +45,12 @@ public class ExhibitView extends View {
 
 	protected void onDraw(Canvas canvas) {
 		Point p1 = new Point(context);
-		p1.setValues(253, 294, 20);
+		p1.setValues(243, 297, 40);
 		p1.draw(canvas);
 		points.add(p1);
 		
 		Point p2 = new Point(context);
-		p2.setValues(240,500,20);
+		p2.setValues(210,492,40);
 		p2.draw(canvas);
 		p2.setLayoutType(1);
 		points.add(p2);
