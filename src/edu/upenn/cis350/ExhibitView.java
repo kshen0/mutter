@@ -43,26 +43,15 @@ public class ExhibitView extends View {
 		points = new HashMap<Point, Integer>();
 	}
 
-<<<<<<< HEAD
-	protected void onDraw(Canvas canvas) {
-		Point p1 = new Point(context);
-		p1.setValues(243, 297, 40);
-		p1.draw(canvas);
-		points.add(p1);
-		
-		Point p2 = new Point(context);
-		p2.setValues(210,492,40);
-		p2.draw(canvas);
-		p2.setLayoutType(1);
-		points.add(p2);
-=======
 	private void setUpPoints() {
-		Point p1 = new Point(context, 160, 187, 30);
+		Point p1 = new Point(context, 160, 197, 30);
 		points.put(p1, R.layout.pointselectedlayout);
-		
-		Point p2 = new Point(context, 136, 314, 30);
+		 
+		Point p2 = new Point(context, 136, 328, 30);
 		points.put(p2, R.layout.pointlayouttwo);
->>>>>>> 9fc8705d74cbce0a048da5a547c5ace81a5d7e0a
+		
+		Point p3 = new Point(context, 28, 124, 30);
+		points.put(p3, R.layout.point3layout);
 	}
 	
 	protected void onDraw(Canvas canvas) {

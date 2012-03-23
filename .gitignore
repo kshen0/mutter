@@ -1,12 +1,10 @@
 *.dex
 *.apk
 *.ap_
-<<<<<<< HEAD
 */gen/*
-=======
+*/bin/*
 *.swp
 *~
 .classpath
 gen/
->>>>>>> 9fc8705d74cbce0a048da5a547c5ace81a5d7e0a
 bin/
