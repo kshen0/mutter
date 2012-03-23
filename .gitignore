@@ -1,5 +1,8 @@
 *.dex
 *.apk
 *.ap_
+*.swp
+*~
+.classpath
 gen/
 bin/
