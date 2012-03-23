@@ -44,10 +44,10 @@ public class ExhibitView extends View {
 	}
 
 	private void setUpPoints() {
-		Point p1 = new Point(context, 253, 294, 20);
+		Point p1 = new Point(context, 160, 187, 30);
 		points.put(p1, R.layout.pointselectedlayout);
 		
-		Point p2 = new Point(context, 230, 490, 20);
+		Point p2 = new Point(context, 136, 314, 30);
 		points.put(p2, R.layout.pointlayouttwo);
 	}
 	
