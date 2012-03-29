@@ -1,48 +1,52 @@
 package edu.upenn.cis350;
 
-import java.util.HashMap;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class MutterActivity extends Activity {
 
-	private static ExhibitView exhibitView;
-	private HashMap<Point, Integer> points;
-
+	// map containing key: layout id, value: int array of 3 values (x, y, button side length)
+	private HashMap<Integer, ArrayList<Integer>> pointCoords;
+	private static final int SIDE = 30;
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		exhibitView = (ExhibitView) findViewById(R.id.exhibitView);
-		points = exhibitView.getPoints();
+		setupPoints();
 	}
 
-	public boolean onTouchEvent(MotionEvent event) {
-		int action = event.getAction();
-		if (action == MotionEvent.ACTION_DOWN) {
-			int touchX = (int) event.getX();
-			int touchY = (int) event.getY() - 109;
-			for (Point point : points.keySet()) {
-				Rect r = point.getBounds();
-				Log.v("rect dimensions", "bounding box = " + r.left + ", "
-						+ r.top + ", " + r.right + ", " + r.bottom);
-				Log.v("point dimensions", "x, y = " + touchX + ", " + touchY);
-				if (point.getBounds().contains(touchX, touchY)) {
-					Intent intent = new Intent(this, SelectPointActivity.class);
-					intent.putExtra("layout", points.get(point));
-					startActivity(intent);
-				}
-			}
-		}
-		return false;
+	public void onNurseButtonClick(View view) {
+		Intent intent = new Intent(this, PathActivity.class);
+		intent.putExtra("layout", R.layout.nurselayout);
+		intent.putExtra("point coordinates", pointCoords.get(R.layout.nurselayout));
+		intent.putExtra("side size", SIDE);
+		startActivity(intent);
+	}
+	
+	// better way to do this? xml?
+	/* right now: ArrayList of ints in Mutter Activity -> passed by intent to
+	 * PathActivity -> creates ExhibitView -> parses + passes point coords to
+	 *  ExhibitView
+	 * problem: gracefully passing which id is connected to which point
+	 */
+	private void setupPoints() {
+		// set up point coordinates for nurse
+		//HashSet<int[]> nursePoints = new HashSet<int[]>();
+		ArrayList<Integer> nursePoints = new ArrayList<Integer>();
+		nursePoints.add(160);
+		nursePoints.add(197);
+		nursePoints.add(136);
+		nursePoints.add(328);
+		nursePoints.add(28);
+		nursePoints.add(124);
+		pointCoords.put(R.layout.nurselayout, nursePoints);
 	}
 }

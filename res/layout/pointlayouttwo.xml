@@ -3,16 +3,69 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     >
-    
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:orientation="vertical"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:background="@drawable/parchment"
-	    >
+        >
+        
+        
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    >
+		    
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/lipsum2"
+		        android:paddingLeft="12dp"
+		        android:paddingRight="12dp"
+		        android:textColor="#FFF" />
+		    
+		    <ImageView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:paddingTop="0.15in"
+		        android:paddingLeft="0.25in"
+		        android:paddingRight="0.25in"
+		        android:layout_gravity="center_horizontal"
+				android:src="@drawable/hospital1" />
+		    
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/h1"
+		        android:paddingLeft="12dp"
+		        android:paddingRight="12dp"
+		        android:textColor="#FFF" />
+		    
+		    <ImageView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:paddingTop="0.15in"
+		        android:paddingLeft="0.25in"
+		        android:paddingRight="0.25in"
+		        android:layout_gravity="center_horizontal"
+				android:src="@drawable/hospital2" />
+		    
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/h2"
+		        android:paddingLeft="12dp"
+		        android:paddingRight="12dp"
+		        android:paddingBottom="12dp"
+		        android:textColor="#FFF" />
+		        
+		    <Button
+		        android:id="@+id/closebutton"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Close" 
+		        android:onClick="onCloseClick"/>
+		    </LinearLayout>
+		</FrameLayout>
+	</ScrollView>
     
-    
-    
-        </LinearLayout>
-    
-    </ScrollView>

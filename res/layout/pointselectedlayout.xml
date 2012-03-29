@@ -7,7 +7,6 @@
 	    android:orientation="vertical"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:background="@drawable/parchment"
 	    >
 	    
 	    <ImageView
@@ -18,13 +17,35 @@
 	        android:layout_gravity="center_horizontal"
 			android:src="@drawable/aasoldier" />
 	    
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:orientation="horizontal"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        >
+		    <Button
+		        android:id="@+id/audio_button"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Cornelia Hancock Letter"
+		        android:onClick="onClick"
+		        />
+		    
+		    <Button
+		        android:id="@+id/audio_button2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Manley Stacy Letter"
+		        android:onClick="startAudio"
+		        />
+		    </LinearLayout>
+	    
 	    <TextView
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="@string/lipsum"
 	        android:paddingLeft="12dp"
 	        android:paddingRight="12dp"
-	        android:textColor="#000" />
+	        android:textColor="#FFF" />
 	        
 	    <Button
 	        android:id="@+id/closebutton"

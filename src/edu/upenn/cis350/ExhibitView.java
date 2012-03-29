@@ -24,13 +24,13 @@ public class ExhibitView extends View {
 	public ExhibitView(Context con) {
 		super(con);
 		initialize(con);
-		setUpPoints();
+		//setUpPoints();
 	}
 
 	public ExhibitView(Context con, AttributeSet a) {
 		super(con, a);
 		initialize(con);
-		setUpPoints();
+		//setUpPoints();
 		Drawable bg = Drawable.createFromPath("@drawable/floorplan");
 		setBackgroundDrawable(bg);
 	}
@@ -43,12 +43,20 @@ public class ExhibitView extends View {
 		points = new HashMap<Point, Integer>();
 	}
 
+	/*
 	private void setUpPoints() {
-		Point p1 = new Point(context, 160, 187, 30);
+		Point p1 = new Point(context, 160, 197, 30);
 		points.put(p1, R.layout.pointselectedlayout);
-		
-		Point p2 = new Point(context, 136, 314, 30);
+		 
+		Point p2 = new Point(context, 136, 328, 30);
 		points.put(p2, R.layout.pointlayouttwo);
+		
+		Point p3 = new Point(context, 28, 124, 30);
+		points.put(p3, R.layout.point3layout);
+	}
+	*/
+	public void addPoint(int x, int y, int side, int layout) {
+		points.put(new Point(context, x, y, side), layout);
 	}
 	
 	protected void onDraw(Canvas canvas) {

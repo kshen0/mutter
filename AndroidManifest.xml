@@ -26,6 +26,10 @@
             android:name=".PointActivityTwo"
             android:label="Point Activity Two"
             />
+        <activity
+            android:name=".AudioPlayer"
+            android:label="Audio Player"
+            />
     </application>
 
 </manifest>
