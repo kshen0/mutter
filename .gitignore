@@ -8,3 +8,5 @@
 .classpath
 gen/
 bin/
+bin/*
+gen/*
