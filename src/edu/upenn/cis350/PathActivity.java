@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 
 public class PathActivity extends Activity {
 	private static ExhibitView exhibitView;
@@ -27,17 +28,20 @@ public class PathActivity extends Activity {
 	    setContentView(b.getInt("layout"));
 	    ArrayList<Integer> pointCoords = b.getIntegerArrayList("point coordinates");
 	    int side = b.getInt("side size");
+	    points = new HashMap<Point, Integer>();
 	    initializeExhibitView(pointCoords, side);
+	    
 	}
 	
 	private void initializeExhibitView(ArrayList<Integer> coords, int side) {
-		if(coords.size() % 2 != 0) {
+		if(coords.size() % 3 != 0) {
 			throw new IllegalArgumentException("list of coordinates is invalid");
 		}
 		exhibitView = (ExhibitView) findViewById(R.id.exhibitView);
-		for(int i = 0; i < coords.size(); i ++) {
-			//exhibitView.addPoint(coords.get(i), coords.get(i+1), side);
+		for(int i = 0; i < coords.size()-2; i= i+3) {
+			exhibitView.addPoint(coords.get(i), coords.get(i+1), side, coords.get(i+2));
 		}
+		points = exhibitView.getPoints();
 	}
 
 	public boolean onTouchEvent(MotionEvent event) {
@@ -58,5 +62,9 @@ public class PathActivity extends Activity {
 			}
 		}
 		return false;
+	}
+	public void onNewPathClick(View view){
+		finish();
+	
 	}
 }

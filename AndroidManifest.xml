@@ -30,6 +30,11 @@
             android:name=".AudioPlayer"
             android:label="Audio Player"
             />
+        <activity
+            android:name=".PathActivity"
+            android:label="Path Activity"
+            />
     </application>
+    
 
 </manifest>

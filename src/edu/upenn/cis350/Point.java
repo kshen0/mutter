@@ -24,6 +24,7 @@ public class Point extends ImageView{
 	private int side;
 	private Drawable icon;
 	private Context context;
+
 	
 	public Point(Context c, int x, int y, int side) {
 		super(c);
@@ -33,6 +34,7 @@ public class Point extends ImageView{
 		this.y = dipToPx(y);
 		this.side = dipToPx(side);
 		context = c;
+		
 	}
 	
 	// why is this necessary?
@@ -44,6 +46,7 @@ public class Point extends ImageView{
 		y = 0;
 		side = 0;
 		context = c;
+
 	}
 
 	private int dipToPx(int i) {
@@ -91,4 +94,5 @@ public class Point extends ImageView{
 	public String toString() {
 		return "(" + x + ", " + y + ")";
 	}
+
 }
