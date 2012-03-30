@@ -31,8 +31,8 @@ public class ExhibitView extends View {
 		super(con, a);
 		initialize(con);
 		//setUpPoints();
-		Drawable bg = Drawable.createFromPath("@drawable/floorplan");
-		setBackgroundDrawable(bg);
+		//Drawable bg = Drawable.createFromPath("@drawable/floorplan");
+		//setBackgroundDrawable(bg);
 	}
 	
 	private void initialize(Context con) {
