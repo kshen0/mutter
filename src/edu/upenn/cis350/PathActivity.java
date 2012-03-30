@@ -30,6 +30,7 @@ public class PathActivity extends Activity {
 	    int side = b.getInt("side size");
 	    points = new HashMap<Point, Integer>();
 	    initializeExhibitView(pointCoords, side);
+	    System.out.println("hello");
 	    
 	}
 	
