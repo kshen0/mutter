@@ -38,14 +38,15 @@ public final class R {
         public static final int speaker=0x7f020018;
     }
     public static final class id {
-        public static final int AASoldier_button=0x7f060005;
-        public static final int african_close_button=0x7f060001;
-        public static final int audio_button=0x7f060006;
-        public static final int audio_button2=0x7f060007;
+        public static final int AASoldier_button=0x7f060004;
+        public static final int african_close_button=0x7f060000;
+        public static final int audio_button=0x7f060007;
+        public static final int audio_button2=0x7f060008;
         public static final int close_Button=0x7f060003;
-        public static final int closebutton=0x7f060008;
-        public static final int exhibitView=0x7f060000;
-        public static final int nurse_button=0x7f060004;
+        public static final int closebutton=0x7f060009;
+        public static final int exhibitView=0x7f060001;
+        public static final int nurse_button=0x7f060005;
+        public static final int nurse_close_button=0x7f060006;
         public static final int play_button=0x7f060002;
     }
     public static final class layout {
