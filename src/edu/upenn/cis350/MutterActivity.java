@@ -63,17 +63,23 @@ public class MutterActivity extends Activity {
 		if (ID == 0) {  //Nurse
 			points.add(160); //P1 x
 			points.add(197); //P1 y
-			points.add(R.layout.pointselectedlayout); //P1 layout
+			points.add(0); //P1 iconID
+			points.add(R.layout.nursepoint); //P1 layout
 			points.add(136); //P2 x
 			points.add(328); //P2 y
+			points.add(0); //P2 iconID
 			points.add(R.layout.pointlayouttwo);
 			points.add(28);  //P3 x
 			points.add(124); //P3 y
+			points.add(1); //P3 iconID
 			points.add(R.layout.point3layout);
 			pointCoords.put(R.layout.nurselayout, points);
 		}
 		if (ID == 1){ //African American Soldier
-			
+			points.add(160); //P1 x
+			points.add(197); //P1 y
+			points.add(0);
+			points.add(R.layout.pointselectedlayout); 
 			pointCoords.put(R.layout.africansoldierlayout, points);
 		}
 	}

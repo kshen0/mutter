@@ -35,12 +35,12 @@ public class PathActivity extends Activity {
 	}
 	
 	private void initializeExhibitView(ArrayList<Integer> coords, int side) {
-		if(coords.size() % 3 != 0) {
+		if(coords.size() % 4 != 0) {
 			throw new IllegalArgumentException("list of coordinates is invalid");
 		}
 		exhibitView = (ExhibitView) findViewById(R.id.exhibitView);
-		for(int i = 0; i < coords.size()-2; i= i+3) {
-			exhibitView.addPoint(coords.get(i), coords.get(i+1), side, coords.get(i+2));
+		for(int i = 0; i < coords.size()-2; i= i+4) {
+			exhibitView.addPoint(coords.get(i), coords.get(i+1), side, coords.get(i+2), coords.get(i+3));
 		}
 		points = exhibitView.getPoints();
 	}
