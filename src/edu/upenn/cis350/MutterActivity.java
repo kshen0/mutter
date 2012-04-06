@@ -61,6 +61,7 @@ public class MutterActivity extends Activity {
 		// HashSet<int[]> nursePoints = new HashSet<int[]>();
 		ArrayList<Integer> points = new ArrayList<Integer>();
 		if (ID == 0) {  //Nurse
+			points.clear();
 			points.add(160); //P1 x
 			points.add(197); //P1 y
 			points.add(R.layout.pointselectedlayout); //P1 layout
@@ -73,7 +74,10 @@ public class MutterActivity extends Activity {
 			pointCoords.put(R.layout.nurselayout, points);
 		}
 		if (ID == 1){ //African American Soldier
-			
+			points.clear();
+			points.add(155);
+			points.add(135);
+			points.add(R.layout.pointselectedlayout);
 			pointCoords.put(R.layout.africansoldierlayout, points);
 		}
 	}

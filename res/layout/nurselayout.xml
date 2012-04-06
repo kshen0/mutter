@@ -8,8 +8,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:background="@drawable/floorplan_blue_small"
-        android:orientation="vertical" >
+        android:orientation="vertical" 
+        android:background="@+drawable/nurse_background">
 
         <edu.upenn.cis350.ExhibitView
             android:id="@+id/exhibitView"
@@ -18,12 +18,14 @@
             android:layout_weight="1" 
            />
 
-        <!--
-             <ImageView
-	        android:layout_width="fill_parent"
+        <Button
+	        android:id="@+id/african_close_button"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:src="@drawable/button" />
-        -->
+	        android:text="New Path"
+	        android:onClick="onNewPathClick"
+	        android:gravity="bottom"
+        />
     </FrameLayout>
 
 </LinearLayout>
