@@ -3,14 +3,25 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
     <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
+<<<<<<< HEAD
         android:orientation="vertical" 
         android:background="@+drawable/nurse_background">
 
+=======
+        android:background="@drawable/floorplan_blue_small"
+        android:orientation="vertical" 
+        android:layout_above="@+id/nurse_close_button">
+        
+>>>>>>> d198f96f33d4cbbf33facf735d091d2aa6140538
         <edu.upenn.cis350.ExhibitView
             android:id="@+id/exhibitView"
             android:layout_width="fill_parent"
@@ -27,5 +38,17 @@
 	        android:gravity="bottom"
         />
     </FrameLayout>
+    
+    <Button
+        android:id="@+id/nurse_close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Path"
+        android:onClick="onNewPathClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+    
+    </RelativeLayout>
 
 </LinearLayout>

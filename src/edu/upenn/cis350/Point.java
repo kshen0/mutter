@@ -26,9 +26,12 @@ public class Point extends ImageView{
 	private Context context;
 
 	
-	public Point(Context c, int x, int y, int side) {
+	public Point(Context c, int x, int y, int side, int iconID) {
 		super(c);
-		icon = getResources().getDrawable(R.drawable.button_off_small_padded);
+		if (iconID == 0)
+			icon = getResources().getDrawable(R.drawable.button_off_small_padded);
+		else if (iconID == 1)
+			icon = getResources().getDrawable(R.drawable.speaker);
 		setImageDrawable(icon);
 		this.x = dipToPx(x);
 		this.y = dipToPx(y);

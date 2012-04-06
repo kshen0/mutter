@@ -3,28 +3,34 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
-    android:background="@drawable/openscreen_small">
-	<LinearLayout 
-	     android:layout_width="fill_parent"
-   		 android:layout_height="fill_parent"
-   		 android:orientation="vertical">
+    android:background="@drawable/openscreenfixed_small">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+        <Button
+        android:id="@+id/AASoldier_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The African American Soldier"
+        android:onClick="onAfricanSoldierButtonClick" 
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+    
     <Button
 	        android:id="@+id/nurse_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="The Nurse"
-	        android:layout_gravity="bottom"
 	        android:onClick="onNurseButtonClick"
-	        android:layout_alignParentBottom="true" />
+	        android:layout_gravity="center"
+	        android:layout_above="@id/AASoldier_button"
+	        android:layout_centerHorizontal="true"/>
     
     
-    <Button
-        android:id="@+id/AASoldier_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The African American Soldier"
-        android:layout_gravity="bottom"
-        android:onClick="onAfricanSoldierButtonClick" 
-        android:layout_alignParentBottom="true"/>
-</LinearLayout>
+    
+    </RelativeLayout>
+
 </LinearLayout>

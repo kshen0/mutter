@@ -22,6 +22,11 @@ public class MutterActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		pointCoords = new HashMap<Integer, ArrayList<Integer>>();
+		
+		//this is timer stuff for the bodycount
+		//long start;
+		//long finish;
+		
 
 	}
 
@@ -64,20 +69,30 @@ public class MutterActivity extends Activity {
 			points.clear();
 			points.add(160); //P1 x
 			points.add(197); //P1 y
-			points.add(R.layout.pointselectedlayout); //P1 layout
+			points.add(0); //P1 iconID
+			points.add(R.layout.nursepoint); //P1 layout
 			points.add(136); //P2 x
 			points.add(328); //P2 y
+			points.add(0); //P2 iconID
 			points.add(R.layout.pointlayouttwo);
 			points.add(28);  //P3 x
 			points.add(124); //P3 y
+			points.add(1); //P3 iconID
 			points.add(R.layout.point3layout);
 			pointCoords.put(R.layout.nurselayout, points);
 		}
 		if (ID == 1){ //African American Soldier
+<<<<<<< HEAD
 			points.clear();
 			points.add(155);
 			points.add(135);
 			points.add(R.layout.pointselectedlayout);
+=======
+			points.add(160); //P1 x
+			points.add(197); //P1 y
+			points.add(0);
+			points.add(R.layout.pointselectedlayout); 
+>>>>>>> d198f96f33d4cbbf33facf735d091d2aa6140538
 			pointCoords.put(R.layout.africansoldierlayout, points);
 		}
 	}
