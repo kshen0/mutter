@@ -4,17 +4,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 
 public class PathActivity extends Activity {
 	private static ExhibitView exhibitView;
 	private HashMap<Point, Integer> points;
 
+	
+	private static final int DEATHS_DIALOG = 0;
+	long start;
+    long finish;
+    double deathrate = 5.3;
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,7 +42,31 @@ public class PathActivity extends Activity {
 	    initializeExhibitView(pointCoords, side);
 	    System.out.println("hello");
 	    
+	    //timer stuff for body count
+	    
+	    start = System.currentTimeMillis();
+	    
 	}
+	
+	protected Dialog onCreateDialog(int id) {
+    	if (id == DEATHS_DIALOG) {
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                // this is the message to display
+	    	float time = (finish-start)/1000.0f;
+	    	builder.setMessage("While you were viewing the exhibition, " + (int)(deathrate*time) + " people would have died in the war."); 
+                // this is the button to display
+	    	builder.setPositiveButton("Continue",
+	    		new DialogInterface.OnClickListener() {
+                           // this is the method to call when the button is clicked 
+	    	           public void onClick(DialogInterface dialog, int id) {
+	    	        	   dialog.cancel();
+	    	        	   finish();
+	    	           }
+	    	         });
+    		return builder.create();
+    	}
+    	else return null;
+    }
 	
 	private void initializeExhibitView(ArrayList<Integer> coords, int side) {
 		if(coords.size() % 4 != 0) {
@@ -65,7 +99,10 @@ public class PathActivity extends Activity {
 		return false;
 	}
 	public void onNewPathClick(View view){
-		finish();
+		finish = System.currentTimeMillis();
+		showDialog(DEATHS_DIALOG);
+		
+		//finish();
 	
 	}
 }

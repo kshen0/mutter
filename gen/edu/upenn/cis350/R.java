@@ -30,12 +30,14 @@ public final class R {
         public static final int letter=0x7f020010;
         public static final int nurse=0x7f020011;
         public static final int openscreen_small=0x7f020012;
-        public static final int openscreens=0x7f020013;
-        public static final int parchment=0x7f020014;
-        public static final int parchment2=0x7f020015;
-        public static final int sbutton=0x7f020016;
-        public static final int sdl=0x7f020017;
-        public static final int speaker=0x7f020018;
+        public static final int openscreenfixed=0x7f020013;
+        public static final int openscreenfixed_small=0x7f020014;
+        public static final int openscreens=0x7f020015;
+        public static final int parchment=0x7f020016;
+        public static final int parchment2=0x7f020017;
+        public static final int sbutton=0x7f020018;
+        public static final int sdl=0x7f020019;
+        public static final int speaker=0x7f02001a;
     }
     public static final class id {
         public static final int AASoldier_button=0x7f060004;

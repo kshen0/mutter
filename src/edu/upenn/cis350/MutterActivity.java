@@ -22,6 +22,11 @@ public class MutterActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		pointCoords = new HashMap<Integer, ArrayList<Integer>>();
+		
+		//this is timer stuff for the bodycount
+		//long start;
+		//long finish;
+		
 
 	}
 
