@@ -214,6 +214,11 @@ public class SelectPointActivity extends Activity {
         	    }
 
         	    public void onFinish() {
+        	    	// Get instance of Vibrator from current Context
+        	    	Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        	    	 
+        	    	// Vibrate for 300 milliseconds
+        	    	v.vibrate(700);
         	    	Toast toast = Toast.makeText(getApplicationContext(), "Through the bone", Toast.LENGTH_LONG);
         	    	toast.show();
         	    }
