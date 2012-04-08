@@ -53,8 +53,11 @@ public class Point extends ImageView{
 	}
 
 	private int dipToPx(int i) {
-		Resources r = getResources();
-		float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, i, r.getDisplayMetrics());
+		float density = getResources().getDisplayMetrics().density;
+		float px = i * density;
+		Log.v("density", "" + density);
+		//Resources r = getResources();
+		//float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, i, r.getDisplayMetrics());
 		return (int) px;
 	}
 	

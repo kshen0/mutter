@@ -1,11 +1,13 @@
 package edu.upenn.cis350;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -195,6 +197,12 @@ public class SelectPointActivity extends Activity {
         	    }
 
         	    public void onFinish() {
+        	    	// Get instance of Vibrator from current Context
+        	    	Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        	    	 
+        	    	// Vibrate for 300 milliseconds
+        	    	v.vibrate(300);
+
         	    	Toast toast = Toast.makeText(getApplicationContext(), "He's hit your thighbone, time for the saw", Toast.LENGTH_LONG);
         	    	toast.show();
         	    }

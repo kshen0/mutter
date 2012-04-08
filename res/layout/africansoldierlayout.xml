@@ -13,40 +13,16 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:orientation="vertical" 
-        android:background="@+drawalbe/africansolider_background">
-
-=======
-        android:background="@drawable/floorplan_path2_small"
-        android:orientation="vertical" 
+        android:background="@+drawable/africansoldier_background"
         android:layout_above="@+id/african_close_button">
-        
->>>>>>> d198f96f33d4cbbf33facf735d091d2aa6140538
+       
         <edu.upenn.cis350.ExhibitView
             android:id="@+id/exhibitView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1" 
            />
-<<<<<<< HEAD
-        <Button
-        android:id="@+id/african_close_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Path"
-        android:onClick="onNewPathClick"
-        android:gravity="bottom"
-        />
-=======
->>>>>>> d198f96f33d4cbbf33facf735d091d2aa6140538
-
-        <!--
-             <ImageView
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:src="@drawable/button" />
-        -->
     </FrameLayout>
      <Button
         android:id="@+id/african_close_button"
