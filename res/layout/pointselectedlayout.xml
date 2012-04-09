@@ -23,19 +23,19 @@
 	        android:layout_height="wrap_content"
 	        >
 		    <Button
-		        android:id="@+id/audio_button"
+		        android:id="@+id/Cornelia_Hancock_audio_button"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Cornelia Hancock Letter"
-		        android:onClick="onClick"
+		        android:onClick="onClickCornelia"
 		        />
 		    
 		    <Button
-		        android:id="@+id/audio_button2"
+		        android:id="@+id/Manley_Stacy_audio_button"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Manley Stacy Letter"
-		        android:onClick="startAudio"
+		        android:onClick="onClickManleyStacy"
 		        />
 		    </LinearLayout>
 	    

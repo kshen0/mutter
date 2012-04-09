@@ -27,7 +27,7 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Cornelia Hancock Letter"
-		        android:onClick="onClick"
+		        android:onClick="onClickCornelia"
 		        />
 		    
 		    <Button
@@ -35,7 +35,7 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Manley Stacy Letter"
-		        android:onClick="startAudio"
+		        android:onClick="onClickManleyStacy"
 		        />
 		    </LinearLayout>
 	    
