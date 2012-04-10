@@ -63,7 +63,11 @@ public class MutterActivity extends Activity {
 		// 1 -> African American soldier path
 
 		// set up point coordinates for nurse
-		// HashSet<int[]> nursePoints = new HashSet<int[]>();
+		//An ArrayList of values needed for points (x coordinate, y coordinate, and ID for what kind of icon
+		//the point should have)  is made for each path.  The ArrayList is stored in the pointCoords hashmap,
+		//which has layouts as keys and ArrayLists as values.
+		// When a path button is clicked, the correct ArrayList is gotten from pointCoords and passed into the new
+		// activity by intent.
 		ArrayList<Integer> points = new ArrayList<Integer>();
 		if (ID == 0) {  //Nurse
 			points.clear();

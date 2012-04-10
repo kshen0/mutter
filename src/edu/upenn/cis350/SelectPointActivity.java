@@ -113,21 +113,22 @@ public class SelectPointActivity extends Activity {
         }
 	}
 	
+	// This is called when the Manley Stacy letter button is clicked.  There are two global media players-- mp and mp2.
+	// Mp2 corresponds to the Manley Stacy letter.
 	public void onClickManleyStacy(View view){
-		//mp = MediaPlayer.create(SelectPointActivity.this, R.raw.a2);
 		try {
             Log.v("Status:", "Can you hear me now?");
             
-            if (mp.isPlaying()) {
+            if (mp.isPlaying()) {  //Check if mp is currenty playing.  If it is, stop it.
             	mp.seekTo(0);
             	mp.stop();
             	mp.prepare();
             }
-            if (!mp2.isPlaying()) {
+            if (!mp2.isPlaying()) {  // If mp2 is not playing, start it.
             	mp2.seekTo(0);
             	mp2.start();
             }
-            else if (mp2.isPlaying()) {
+            else if (mp2.isPlaying()) { // If mp2 is playing, stop it.  
             	mp2.seekTo(0);
             	mp2.stop();
             	mp2.prepare();
@@ -144,10 +145,6 @@ public class SelectPointActivity extends Activity {
     }
 	
 	public void onClickCornelia(View view){
-		
-		//mp = MediaPlayer.create(SelectPointActivity.this, R.raw.a1);
-        //mp2 = MediaPlayer.create(SelectPointActivity.this, R.raw.a2);
-		
 		try {
     		Log.v("Status:", "Playing that funky music, white boy");
             //MediaPlayer mp = MediaPlayer.create(SelectPointActivity.this, R.raw.a1);
