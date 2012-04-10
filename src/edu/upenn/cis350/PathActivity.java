@@ -142,7 +142,7 @@ public class PathActivity extends Activity {
 						+ r.top + ", " + r.right + ", " + r.bottom);
 				Log.v("point dimensions", "x, y = " + touchX + ", " + touchY);
 				if (point.getBounds().contains(touchX, touchY)) {
-					Intent intent = new Intent(this, SelectPointActivity.class);
+					Intent intent = new Intent(this, TimerActivity.class);
 					intent.putExtra("layout", points.get(point));
 					startActivity(intent);
 				}

@@ -35,6 +35,10 @@
             android:name=".PathActivity"
             android:label="Path Activity"
             />
+        <activity
+            android:name=".TimerActivity"
+            android:label="Timer Activity"
+            />
     </application>
     
 
