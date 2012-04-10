@@ -90,26 +90,23 @@ public class PathActivity extends Activity {
 			e.printStackTrace();
 		} 
 		*/
-
-	   
-	    //System.out.println(in.readLine());
 	    
 	    //timer stuff for body count
-	    
-	    start = System.currentTimeMillis();
-	    
+	    start = System.currentTimeMillis();  
 	}
 	
+	// creates a dialog box when you exit a path
 	protected Dialog onCreateDialog(int id) {
+		// if this dialog is the deaths dialog
     	if (id == DEATHS_DIALOG) {
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                // this is the message to display
+            // get time spent viewing the previous screen and convert it to Civil War deaths
 	    	float time = (finish-start)/1000.0f;
 	    	builder.setMessage("While you were viewing the exhibition, " + (int)(deathrate*time) + " people would have died in the war."); 
-                // this is the button to display
+            // show continue button
 	    	builder.setPositiveButton("Continue",
 	    		new DialogInterface.OnClickListener() {
-                           // this is the method to call when the button is clicked 
+                       // exit dialog when button is clicked
 	    	           public void onClick(DialogInterface dialog, int id) {
 	    	        	   dialog.cancel();
 	    	        	   finish();
@@ -131,17 +128,21 @@ public class PathActivity extends Activity {
 		points = exhibitView.getPoints();
 	}
 
+	// processes screen touches and opens appropriate new screen
 	public boolean onTouchEvent(MotionEvent event) {
 		int action = event.getAction();
+		// if the action is a screen press
 		if (action == MotionEvent.ACTION_DOWN) {
+			// get coordinates for screen, y offset by 77 to account for bar at the top
 			int touchX = (int) event.getX();
 			int touchY = (int) event.getY() - 77;
+			// for each point in our map of points
 			for (Point point : points.keySet()) {
+				// get the bounding box of the point
 				Rect r = point.getBounds();
-				Log.v("rect dimensions", "bounding box = " + r.left + ", "
-						+ r.top + ", " + r.right + ", " + r.bottom);
-				Log.v("point dimensions", "x, y = " + touchX + ", " + touchY);
+				// if the point contains the coordinates of the screen touch
 				if (point.getBounds().contains(touchX, touchY)) {
+					// make a new activity with the layout specified in the map of points
 					Intent intent = new Intent(this, TimerActivity.class);
 					intent.putExtra("layout", points.get(point));
 					startActivity(intent);
@@ -151,6 +152,7 @@ public class PathActivity extends Activity {
 		return false;
 	}
 	
+	/*
 	private Bitmap decodeFile(InputStream f){
 		  // try {
 		       //Decode image size
@@ -175,33 +177,8 @@ public class PathActivity extends Activity {
 		  // catch (FileNotFoundException e) {}
 		  // return null;
 		}
-	
-	/*
-	//decodes image and scales it to reduce memory consumption
-	private Bitmap decodeFile(File f){
-	    try {
-	        //Decode image size
-	        BitmapFactory.Options o = new BitmapFactory.Options();
-	        o.inJustDecodeBounds = true;
-	        o.inSampleSize = 2;
-	        BitmapFactory.decodeStream(new FileInputStream(f),null,o);
-
-	        //The new size we want to scale to
-	        final int REQUIRED_SIZE=70;
-
-	        //Find the correct scale value. It should be the power of 2.
-	        int scale=1;
-	        while(o.outWidth/scale/2>=REQUIRED_SIZE && o.outHeight/scale/2>=REQUIRED_SIZE)
-	            scale*=2;
-
-	        //Decode with inSampleSize
-	        BitmapFactory.Options o2 = new BitmapFactory.Options();
-	        o2.inSampleSize=scale;
-	        return BitmapFactory.decodeStream(new FileInputStream(f), null, o2);
-	    } catch (FileNotFoundException e) {}
-	    return null;
-	}
 	*/
+	
 	// this should kill the activity, but it doesn't free memory allocated for the background image
 	// how can we implement the Bitmap factory if we're not drawing to canvas?
 	public void onNewPathClick(View view){
