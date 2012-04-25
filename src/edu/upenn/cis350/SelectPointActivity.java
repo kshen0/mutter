@@ -16,8 +16,9 @@ import android.widget.Toast;
 
 public class SelectPointActivity extends Activity {
 
-	MediaPlayer mp;  //Cornelia
+	MediaPlayer cornelia;  //Cornelia
 	MediaPlayer mp2;   //manley stacy
+	boolean showMessage;
 
 	int l = 0;
 
@@ -30,7 +31,7 @@ public class SelectPointActivity extends Activity {
         l = b.getInt("layout");
         setContentView(l);
         
-        mp = MediaPlayer.create(SelectPointActivity.this, R.raw.a1); //Cornelia
+        cornelia = MediaPlayer.create(SelectPointActivity.this, R.raw.a1); //Cornelia
     	mp2 = MediaPlayer.create(SelectPointActivity.this, R.raw.a2);  //manley stacy
 	}
 	
@@ -40,10 +41,10 @@ public class SelectPointActivity extends Activity {
 		try {
             Log.v("Status:", "Can you hear me now?");
             
-            if (mp.isPlaying()) {  //Check if mp is currenty playing.  If it is, stop it.
-            	mp.seekTo(0);
-            	mp.stop();
-            	mp.prepare();
+            if (cornelia.isPlaying()) {  //Check if mp is currenty playing.  If it is, stop it.
+            	cornelia.seekTo(0);
+            	cornelia.stop();
+            	cornelia.prepare();
             }
             if (!mp2.isPlaying()) {  // If mp2 is not playing, start it.
             	mp2.seekTo(0);
@@ -80,18 +81,18 @@ public class SelectPointActivity extends Activity {
             	mp2.stop();
             	mp2.prepare();
             }
-            if (!mp.isPlaying()) {
-            	mp.seekTo(0);
-            	mp.start();
+            if (!cornelia.isPlaying()) {
+            	cornelia.seekTo(0);
+            	cornelia.start();
             }
-            else if (mp.isPlaying()) {
-            	mp.seekTo(0);
-            	mp.stop();
-            	mp.prepare();
+            else if (cornelia.isPlaying()) {
+            	cornelia.seekTo(0);
+            	cornelia.stop();
+            	cornelia.prepare();
             }
             
             
-            mp.setOnCompletionListener(new OnCompletionListener(){
+            cornelia.setOnCompletionListener(new OnCompletionListener(){
                 public void onCompletion(MediaPlayer arg0) {
                     
                 }
@@ -105,9 +106,10 @@ public class SelectPointActivity extends Activity {
 	}
 
 	public void onCloseClick(View view) {
+		showMessage = false;
 		//if (l == R.layout.pointselectedlayout || l == R.layout.point3layout) {
-			if (mp.isPlaying()) {
-				mp.stop();
+			if (cornelia.isPlaying()) {
+				cornelia.stop();
 			}
 			//if (l == R.layout.pointselectedlayout)
 				if (mp2.isPlaying()) {
