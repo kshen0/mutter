@@ -9,6 +9,18 @@
         android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     
+        <Button 
+        android:id="@+id/gallery_button"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="View all images"
+	    android:onClick="onGalleryClick"
+	    android:layout_gravity="center"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignParentBottom="true"
+        
+        />
+    
         <Button
         android:id="@+id/AASoldier_button"
         android:layout_width="wrap_content"
@@ -16,7 +28,7 @@
         android:text="The African American Soldier"
         android:onClick="onAfricanSoldierButtonClick" 
         android:layout_gravity="center"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/gallery_button"
         android:layout_centerHorizontal="true"/>
     
     <Button
