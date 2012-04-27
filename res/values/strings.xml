@@ -10,5 +10,8 @@
 	<string name="h2">A different view</string>
 	<string name="x">An African American solider.</string>
 	<string name="closeMedia">onCloseClick</string>
+	<string name="quote">&quot;'Once let the black man get upon his person the brass letter, U.S., let him get an eagle on his button, and a musket on his shoulder and bullets in his pocket, there is no power on earth that can deny that he has earned the right to citizenship.'&quot;</string>
+	<string name="quotedperson">~ Frederick Douglass</string>
+	<string name="blacksoldiers">By the end of the Civil War, roughly 179,000 black men (10% of the Union Army) served as soldiers in the U.S. Army and another 19,000 served in the Navy. Nearly 40,000 black soldiers died over the course of the war—30,000 of infection or disease. Black soldiers served in artillery and infantry and performed all noncombat support functions that sustain an army, as well. Black carpenters, chaplains, cooks, guards, laborers, nurses, scouts, spies, steamboat pilots, surgeons, and teamsters also contributed to the war cause. There were nearly 80 black commissioned officers. Black women, who could not formally join the Army, nonetheless served as nurses, spies, and scouts, the most famous being Harriet Tubman (photo citation: 200-HN-PIO-1), who scouted for the 2d South Carolina Volunteers.</string>
 
 </resources>

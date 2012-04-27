@@ -20,36 +20,39 @@
 	    android:layout_alignParentBottom="true"
         
         />
-    
+        
         <Button
-        android:id="@+id/AASoldier_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The African American Soldier"
-        android:onClick="onAfricanSoldierButtonClick" 
-        android:layout_gravity="center"
-        android:layout_above="@id/gallery_button"
-        android:layout_centerHorizontal="true"/>
-    
-    <Button
-	        android:id="@+id/nurse_button"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="The Nurse"
-	        android:onClick="onNurseButtonClick"
-	        android:layout_gravity="center"
-	        android:layout_above="@id/AASoldier_button"
-	        android:layout_centerHorizontal="true"/>
-    
-     <Button
 	        android:id="@+id/musicplayer_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="All Audio Files"
 	        android:onClick="onMusicplayerClick"
 	        android:layout_gravity="center"
-	        android:layout_above="@id/nurse_button"
+	        android:layout_above="@id/gallery_button"
 	        android:layout_centerHorizontal="true"/>
+    
+        <Button
+        android:id="@+id/AASoldier_button"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:onClick="onAfricanSoldierButtonClick" 
+        android:layout_gravity="center"
+        android:layout_above="@id/musicplayer_button"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/solder"/>
+    
+    <Button
+	        android:id="@+id/nurse_button"
+	        android:layout_width="100dp"
+	        android:layout_height="35dp"
+	        
+	        android:onClick="onNurseButtonClick"
+	        android:layout_gravity="center"
+	        android:layout_above="@id/AASoldier_button"
+	        android:layout_centerHorizontal="true"
+	        android:background="@drawable/fieldnurse"  />
+      
+     
     
     
     </RelativeLayout>
