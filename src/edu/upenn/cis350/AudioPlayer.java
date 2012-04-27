@@ -1,70 +1,120 @@
 package edu.upenn.cis350;
 
-import java.io.IOException;
-
 import android.app.Activity;
 import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
- 
-public class AudioPlayer extends Activity {
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-    	Log.v("Status:", "entered activity");
-        super.onCreate(savedInstanceState);
-        Log.v("Status:", "Super'd");
-        setContentView(R.layout.audioplayerlayout);
-        Log.v("Status:", "set content view");
-       
-        /*Button cmd_play = (Button)this.findViewById(R.id.play_button);
-        cmd_play.setOnClickListener(new OnClickListener(){
-        
-           	@Override
-            public void onClick(View arg0) {
-            	try {
-            		Log.v("Status:", "Playing that funky music, white boy");
-                    MediaPlayer mp = MediaPlayer.create(AudioPlayer.this, R.raw.a1);
-                    Log.v("Status:", "Media loaded");
-                    //mp.prepare();
-                    //mp.start();
-                    
-                    
-                    
-                    try {
-                        mp.prepare();
-                    } catch (IllegalStateException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                    
-                    Log.v("Status:", "Can you hear me now?");
-                    
-                    mp.start();
-                    
-                    
-                    mp.setOnCompletionListener(new OnCompletionListener(){
-                        public void onCompletion(MediaPlayer arg0) {
-                            
-                        }
-                });
-                    
-            	}
-            	catch (Exception e) {
-                	Log.e("err", "error: " + e.getMessage(), e);
-                }
-            }
-        });*/
-    }
+
+import android.media.MediaPlayer.OnPreparedListener;
+import android.view.MotionEvent;
+import android.widget.MediaController;
+import android.widget.TextView;
+
+import java.io.IOException;
+
+public class AudioPlayer extends Activity implements OnPreparedListener, MediaController.MediaPlayerControl{
+  private static final String TAG = "AudioPlayer";
+
+  public String filename = "audioFileName";
+
+  private MediaPlayer mediaPlayer;
+  private MediaController mediaController;
+  private String audioFile;
+
+  private Handler handler = new Handler();
+
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.audio_player);
     
-    public void onCloseClick(View view){
-		finish();
-	}
+    Bundle b = getIntent().getExtras();
+    filename = b.getString("filename");
+    
+    audioFile = this.getIntent().getStringExtra(filename);
+    ((TextView)findViewById(R.id.now_playing_text)).setText(audioFile);
+
+    mediaPlayer = new MediaPlayer();
+    mediaPlayer.setOnPreparedListener(this);
+
+    mediaController = new MediaController(this);
+
+    try {
+      mediaPlayer.setDataSource(audioFile);
+      mediaPlayer.prepare();
+      mediaPlayer.start();
+    } catch (IOException e) {
+      Log.e(TAG, "Could not open file " + audioFile + " for playback.", e);
+    }
+
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
+    mediaPlayer.stop();
+    mediaPlayer.release();
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent event) {
+    //the MediaController will hide after 3 seconds - tap the screen to make it appear again
+    mediaController.show();
+    return false;
+  }
+
+  //--MediaPlayerControl methods----------------------------------------------------
+  public void start() {
+    mediaPlayer.start();
+  }
+
+  public void pause() {
+    mediaPlayer.pause();
+  }
+
+  public int getDuration() {
+    return mediaPlayer.getDuration();
+  }
+
+  public int getCurrentPosition() {
+    return mediaPlayer.getCurrentPosition();
+  }
+
+  public void seekTo(int i) {
+    mediaPlayer.seekTo(i);
+  }
+
+  public boolean isPlaying() {
+    return mediaPlayer.isPlaying();
+  }
+
+  public int getBufferPercentage() {
+    return 0;
+  }
+
+  public boolean canPause() {
+    return true;
+  }
+
+  public boolean canSeekBackward() {
+    return true;
+  }
+
+  public boolean canSeekForward() {
+    return true;
+  }
+  //--------------------------------------------------------------------------------
+
+  public void onPrepared(MediaPlayer mediaPlayer) {
+    Log.d(TAG, "onPrepared");
+    mediaController.setMediaPlayer(this);
+    mediaController.setAnchorView(findViewById(R.id.main_audio_view));
+
+    handler.post(new Runnable() {
+      public void run() {
+        mediaController.setEnabled(true);
+        mediaController.show();
+      }
+    });
+  }
 }

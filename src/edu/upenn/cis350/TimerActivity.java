@@ -10,8 +10,11 @@ import android.view.View;
 import android.widget.Toast;
 
 public class TimerActivity extends SelectPointActivity {
+	boolean stop;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
+		stop = false;
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.pointselectedlayout);
         
@@ -41,8 +44,10 @@ public class TimerActivity extends SelectPointActivity {
     	    }
 
     	    public void onFinish() {
-    	    	Toast toast = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
-    	    	toast.show();
+    	    	if(!stop) {
+	    	    	Toast toast = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
+	    	    	toast.show();
+    	    	}
     	    }
     	}.start();
 	}
@@ -60,5 +65,11 @@ public class TimerActivity extends SelectPointActivity {
     	    	toast.show();
     	    }
     	}.start();
+	}
+	
+	public void onCloseClick(View view) {
+		stop = true;
+		finish();
+		return;
 	}
 }

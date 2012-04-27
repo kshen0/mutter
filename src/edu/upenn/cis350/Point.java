@@ -31,7 +31,7 @@ public class Point extends ImageView{
 		if (iconID == 0)
 			icon = getResources().getDrawable(R.drawable.button_off_small_padded);
 		else if (iconID == 1)
-			icon = getResources().getDrawable(R.drawable.speaker);
+			icon = getResources().getDrawable(R.drawable.speaker2);
 		setImageDrawable(icon);
 		this.x = dipToPx(x);
 		this.y = dipToPx(y);

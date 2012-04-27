@@ -49,6 +49,11 @@ public class MutterActivity extends Activity {
 		intent.putExtra("side size", SIDE);
 		startActivity(intent);
 	}
+	
+	public void onMusicplayerClick(View view) {
+		Intent intent = new Intent(this, MusicList.class);
+		startActivity(intent);
+	}
 
 	// better way to do this? xml?
 	/*
