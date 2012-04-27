@@ -16,70 +16,79 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MusicList extends ListActivity {
+	private int lastClicked;
+	private MediaPlayer mp;
+	
+	// ugly hardcoded thing for now
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
 
-	  final String[] NAMES = new String[] {"Manley Stacey", "Cornelia Hancock", "Audio 3", "Audio 4"};
+	  lastClicked = -1;
+	  mp = null;
+	  
+	  final String[] NAMES = new String[] {"Manley Stacey", "Cornelia Hancock", "Johnny Comes Marching Home", "Audio 4"};
 	  setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, NAMES));
 
 	  ListView lv = getListView();
 	  lv.setTextFilterEnabled(true);
-	  //OnItemClickListener foo = new OnItemClickListener();
 	  lv.setOnItemClickListener(new OnItemClickListener() {
 	    public void onItemClick(AdapterView<?> parent, View view,
 	        int position, long id) {
-	    	MediaPlayer mp = null;
-	    	MediaPlayer mp2 = null;
-	    	if(position == 0) {
-	    	    mp2 = MediaPlayer.create(MusicList.this, R.raw.a2);  //manley stacy
+	    	// if the button clicked is the same as the previous button clicked, stop playing
+	    	if (position == lastClicked) {
+	    		if (mp != null && mp.isPlaying()) {
+		    	    mp.release();
+	    			try {
+						mp.prepare();
+					} catch (IllegalStateException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	    		}
+	    	}
+	    	else if(position == 0) {
+	    		managePlayer(R.raw.a2);
 	    	}
 	    	else if (position == 1) {
-	    		mp = MediaPlayer.create(MusicList.this, R.raw.a1); //Cornelia
+	    		managePlayer(R.raw.a1);
 	    	}
-	    	if (mp != null && mp.isPlaying()) {  //Check if mp is currenty playing.  If it is, stop it.
-            	mp.seekTo(0);
-            	mp.stop();
-            	try {
-					mp.prepare();
-				} catch (IllegalStateException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            }
-            if (mp2 != null && !mp2.isPlaying()) {  // If mp2 is not playing, start it.
-            	mp2.seekTo(0);
-            	mp2.start();
-            }
-            else if (mp2 != null && mp2.isPlaying()) { // If mp2 is playing, stop it.  
-            	mp2.seekTo(0);
-            	mp2.stop();
-            	try {
-					mp2.prepare();
-				} catch (IllegalStateException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            }
-            if(mp2 != null) {
-            mp2.setOnCompletionListener(new OnCompletionListener(){
-                public void onCompletion(MediaPlayer arg0) {
-                    
-                }
-            }); 
-            }
-	      // When clicked, show a toast with the TextView text
-	      //Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
-	        //  Toast.LENGTH_SHORT).show();
-	      
+	    	else if (position == 2) {
+	    		managePlayer(R.raw.johnnycomesmarchinghome);
+	    	}
+	    	lastClicked = position;
 	    }
 	  });
 	}
 	
+	private void managePlayer(int resourceId) {
+		// stop previous file from playing
+		if (mp != null) {
+			mp.release();
+		}
+		
+		// make a new player for the resource
+	    mp = MediaPlayer.create(MusicList.this, resourceId);
+	    
+	    //toggle the player on or off
+	    mp.seekTo(0);
+		if (mp.isPlaying()) {
+	    	mp.stop();
+		}
+		else {
+			mp.start();
+		}
+	}
+	
+	@Override
+	public void onBackPressed() {
+		if (mp != null) {
+			mp.release();
+		}
+		finish();
+		return;
+	}
 }
