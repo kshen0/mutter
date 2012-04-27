@@ -31,33 +31,38 @@ public final class R {
         public static final int speaker2=0x7f020011;
     }
     public static final class id {
-        public static final int AASoldier_button=0x7f060006;
-        public static final int Cornelia_Hancock_audio_button=0x7f06000e;
-        public static final int Manley_Stacy_audio_button=0x7f06000d;
+        public static final int AASoldier_button=0x7f06000a;
+        public static final int Cornelia_Hancock_audio_button=0x7f060012;
+        public static final int Manley_Stacy_audio_button=0x7f060011;
         public static final int african_close_button=0x7f060000;
-        public static final int audio_button=0x7f06000a;
-        public static final int audio_button2=0x7f06000b;
+        public static final int audio_button=0x7f06000e;
+        public static final int audio_button2=0x7f06000f;
         public static final int close_Button=0x7f060005;
-        public static final int closebutton=0x7f06000c;
+        public static final int closebutton=0x7f060010;
         public static final int exhibitView=0x7f060001;
+        public static final int gallery1=0x7f060006;
+        public static final int gallery_button=0x7f060009;
+        public static final int gallery_close=0x7f060008;
+        public static final int image1=0x7f060007;
         public static final int main_audio_view=0x7f060002;
-        public static final int musicplayer_button=0x7f060008;
+        public static final int musicplayer_button=0x7f06000c;
         public static final int now_playing_text=0x7f060003;
-        public static final int nurse_button=0x7f060007;
-        public static final int nurse_close_button=0x7f060009;
+        public static final int nurse_button=0x7f06000b;
+        public static final int nurse_close_button=0x7f06000d;
         public static final int play_button=0x7f060004;
     }
     public static final class layout {
         public static final int africansoldierlayout=0x7f030000;
         public static final int audio_player=0x7f030001;
         public static final int audioplayerlayout=0x7f030002;
-        public static final int list_item=0x7f030003;
-        public static final int main=0x7f030004;
-        public static final int nurselayout=0x7f030005;
-        public static final int nursepoint=0x7f030006;
-        public static final int point3layout=0x7f030007;
-        public static final int pointlayouttwo=0x7f030008;
-        public static final int pointselectedlayout=0x7f030009;
+        public static final int gallerylayout=0x7f030003;
+        public static final int list_item=0x7f030004;
+        public static final int main=0x7f030005;
+        public static final int nurselayout=0x7f030006;
+        public static final int nursepoint=0x7f030007;
+        public static final int point3layout=0x7f030008;
+        public static final int pointlayouttwo=0x7f030009;
+        public static final int pointselectedlayout=0x7f03000a;
     }
     public static final class raw {
         public static final int a1=0x7f040000;
@@ -74,4 +79,25 @@ public final class R {
         public static final int ok=0x7f050002;
         public static final int x=0x7f050007;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a Gallery1.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Gallery1_android_galleryItemBackground edu.upenn.cis350:android_galleryItemBackground}</code></td><td></td></tr>
+           </table>
+           @see #Gallery1_android_galleryItemBackground
+         */
+        public static final int[] Gallery1 = {
+            0x0101004c
+        };
+        /**
+          <p>This symbol is the offset where the {@link edu.upenn.cis350.R.attr#android_galleryItemBackground}
+          attribute's value can be found in the {@link #Gallery1} array.
+          @attr name android:android_galleryItemBackground
+        */
+        public static final int Gallery1_android_galleryItemBackground = 0;
+    };
 }

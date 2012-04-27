@@ -55,8 +55,8 @@ public class ExhibitView extends View {
 		points.put(p3, R.layout.point3layout);
 	}
 	*/
-	public void addPoint(int x, int y, int side, int iconID, int layout) {
-		points.put(new Point(context, x, y, side, iconID), layout);
+	public void addPoint(int x, int y, int side, int iconID, int layout, int layoutID) {
+		points.put(new Point(context, x, y, side, iconID, layoutID), layout);
 	}
 	
 	protected void onDraw(Canvas canvas) {

@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 public class TimerActivity extends SelectPointActivity {
 	boolean stop;
-	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
 		stop = false;
@@ -23,6 +22,7 @@ public class TimerActivity extends SelectPointActivity {
 		int l = 0;
 		l = b.getInt("layout");
 	    //setContentView(l);
+		showMessage = true;
 	    
 	    
 	    if (l == R.layout.pointlayouttwo) {
@@ -38,6 +38,8 @@ public class TimerActivity extends SelectPointActivity {
 	//makes a toast based on absolute time after opening exhibit and what message to display
 	//overload lets you specify a vibration time in milliseconds
 	public void makeTimedMessage (int t, final String s) {
+		if (showMessage == false)
+			return;
 		new CountDownTimer(t*1000, 1000) {
     		public void onTick(long millisUntilFinished) {
     	        
@@ -53,6 +55,8 @@ public class TimerActivity extends SelectPointActivity {
 	}
 	
 	public void makeTimedMessage (int t, final int vt, final String s) {
+		if (showMessage == false)
+			return;
 		new CountDownTimer(t*1000, 1000) {
     		public void onTick(long millisUntilFinished) {
     	        

@@ -24,26 +24,31 @@ public class Point extends ImageView{
 	private int side;
 	private Drawable icon;
 	private Context context;
+	private int layoutID;
 
 	
-	public Point(Context c, int x, int y, int side, int iconID) {
+	public Point(Context c, int x, int y, int side, int iconID, int layoutID) {
 		super(c);
-		if (iconID == 0)
+		if (iconID == 1)
+			icon = getResources().getDrawable(R.drawable.speaker);
+		else if (layoutID == R.layout.nurselayout)
 			icon = getResources().getDrawable(R.drawable.button_off_small_padded);
-		else if (iconID == 1)
-			icon = getResources().getDrawable(R.drawable.speaker2);
+		else 
+			icon = getResources().getDrawable(R.drawable.button_on_small);
 		setImageDrawable(icon);
 		this.x = dipToPx(x);
 		this.y = dipToPx(y);
 		this.side = dipToPx(side);
 		context = c;
+		this.layoutID = layoutID;
 		
 	}
 	
 	// why is this necessary?
 	public Point(Context c, AttributeSet a) {
 		super(c, a);
-		icon = getResources().getDrawable(R.drawable.button_off_small_padded);
+
+		icon = getResources().getDrawable(R.drawable.button_on_small);
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;

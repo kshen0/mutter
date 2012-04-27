@@ -54,6 +54,11 @@ public class MutterActivity extends Activity {
 		Intent intent = new Intent(this, MusicList.class);
 		startActivity(intent);
 	}
+	
+	public void onGalleryClick(View view){
+		Intent intent = new Intent(this, GalleryActivity.class);
+		startActivity(intent);
+	}
 
 	// better way to do this? xml?
 	/*
@@ -95,6 +100,8 @@ public class MutterActivity extends Activity {
 			points.add(220); //P1 y
 			points.add(0);
 			points.add(R.layout.pointselectedlayout); 
+			
+			
 			pointCoords.put(R.layout.africansoldierlayout, points);
 		}
 	}

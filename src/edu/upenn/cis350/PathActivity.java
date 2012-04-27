@@ -123,7 +123,7 @@ public class PathActivity extends Activity {
 		}
 		exhibitView = (ExhibitView) findViewById(R.id.exhibitView);
 		for(int i = 0; i < coords.size()-2; i= i+4) {
-			exhibitView.addPoint(coords.get(i), coords.get(i+1), side, coords.get(i+2), coords.get(i+3));
+			exhibitView.addPoint(coords.get(i), coords.get(i+1), side, coords.get(i+2), coords.get(i+3), layoutId);
 		}
 		points = exhibitView.getPoints();
 	}
@@ -141,7 +141,7 @@ public class PathActivity extends Activity {
 				// get the bounding box of the point
 				Rect r = point.getBounds();
 				// if the point contains the coordinates of the screen touch
-				if (point.getBounds().contains(touchX, touchY)) {
+				if (r.contains(touchX, touchY)) {
 					// make a new activity with the layout specified in the map of points
 					Intent intent = new Intent(this, TimerActivity.class);
 					intent.putExtra("layout", points.get(point));
