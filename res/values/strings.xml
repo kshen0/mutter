@@ -10,5 +10,7 @@
 	<string name="h2">A different view</string>
 	<string name="x">An African American solider.</string>
 	<string name="closeMedia">onCloseClick</string>
+	<string name="quote">&quot;'Once let the black man get upon his person the brass letter, U.S., let him get an eagle on his button, and a musket on his shoulder and bullets in his pocket, there is no power on earth that can deny that he has earned the right to citizenship.'&quot;</string>
+	<string name="quotedperson">~ Frederick Douglass</string>
 
 </resources>

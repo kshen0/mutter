@@ -35,10 +35,18 @@
 		    <TextView
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:text="@string/lipsum"
+		        android:text="@string/quote"
 		        android:paddingLeft="12dp"
 		        android:paddingRight="12dp"
-		        android:textColor="#FFF" />
+		        android:textColor="#FFF" android:paddingBottom="15dp" android:textStyle="italic"/>
+		    
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="@string/quotedperson"
+		        android:paddingLeft="12dp"
+		        android:paddingRight="12dp"
+		        android:textColor="#FFF" android:paddingBottom="15dp" android:layout_gravity="right"/>
 		        
 		    <Button
 		        android:id="@+id/closebutton"
