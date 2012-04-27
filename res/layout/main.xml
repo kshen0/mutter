@@ -41,6 +41,15 @@
 	        android:layout_above="@id/AASoldier_button"
 	        android:layout_centerHorizontal="true"/>
     
+     <Button
+	        android:id="@+id/musicplayer_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="All Audio Files"
+	        android:onClick="onMusicplayerClick"
+	        android:layout_gravity="center"
+	        android:layout_above="@id/nurse_button"
+	        android:layout_centerHorizontal="true"/>
     
     
     </RelativeLayout>

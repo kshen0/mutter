@@ -50,10 +50,14 @@ public class MutterActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	public void onMusicplayerClick(View view) {
+		Intent intent = new Intent(this, MusicList.class);
+		startActivity(intent);
+	}
+	
 	public void onGalleryClick(View view){
 		Intent intent = new Intent(this, GalleryActivity.class);
 		startActivity(intent);
-		
 	}
 
 	// better way to do this? xml?

@@ -39,6 +39,10 @@
             android:name=".TimerActivity"
             android:label="Timer Activity"
             />
+         <activity
+            android:name=".MusicList"
+            android:label="Music List"
+			/>
         <activity
             android:name=".GalleryActivity"
             android:label="Gallery Activity"
