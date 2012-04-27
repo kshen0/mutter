@@ -9,5 +9,6 @@
 	<string name="h1">Pictured: a hospital</string>
 	<string name="h2">A different view</string>
 	<string name="x">An African American solider.</string>
+	<string name="closeMedia">onCloseClick</string>
 
 </resources>

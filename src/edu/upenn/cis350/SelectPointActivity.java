@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,8 +18,7 @@ import android.widget.Toast;
 public class SelectPointActivity extends Activity {
 
 	MediaPlayer cornelia;  //Cornelia
-	MediaPlayer mp2;   //manley stacy
-	boolean showMessage;
+	MediaPlayer manley;   //manley stacy
 
 	int l = 0;
 
@@ -32,11 +32,11 @@ public class SelectPointActivity extends Activity {
         setContentView(l);
         
         cornelia = MediaPlayer.create(SelectPointActivity.this, R.raw.a1); //Cornelia
-    	mp2 = MediaPlayer.create(SelectPointActivity.this, R.raw.a2);  //manley stacy
+    	manley = MediaPlayer.create(SelectPointActivity.this, R.raw.a2);  //manley stacy
 	}
 	
-	// This is called when the Manley Stacy letter button is clicked.  There are two global media players-- mp and mp2.
-	// Mp2 corresponds to the Manley Stacy letter.
+	// This is called when the Manley Stacy letter button is clicked.  There are two global media players-- mp and manley.
+	// manley corresponds to the Manley Stacy letter.
 	public void onClickManleyStacy(View view){
 		try {
             Log.v("Status:", "Can you hear me now?");
@@ -46,16 +46,16 @@ public class SelectPointActivity extends Activity {
             	cornelia.stop();
             	cornelia.prepare();
             }
-            if (!mp2.isPlaying()) {  // If mp2 is not playing, start it.
-            	mp2.seekTo(0);
-            	mp2.start();
+            if (!manley.isPlaying()) {  // If manley is not playing, start it.
+            	manley.seekTo(0);
+            	manley.start();
             }
-            else if (mp2.isPlaying()) { // If mp2 is playing, stop it.  
-            	mp2.seekTo(0);
-            	mp2.stop();
-            	mp2.prepare();
+            else if (manley.isPlaying()) { // If manley is playing, stop it.  
+            	manley.seekTo(0);
+            	manley.stop();
+            	manley.prepare();
             }
-            mp2.setOnCompletionListener(new OnCompletionListener(){
+            manley.setOnCompletionListener(new OnCompletionListener(){
                 public void onCompletion(MediaPlayer arg0) {
                     
                 }
@@ -76,10 +76,10 @@ public class SelectPointActivity extends Activity {
             
             Log.v("Status:", "Can you hear me now?");
             
-            if (mp2.isPlaying()) {
-            	mp2.seekTo(0);
-            	mp2.stop();
-            	mp2.prepare();
+            if (manley.isPlaying()) {
+            	manley.seekTo(0);
+            	manley.stop();
+            	manley.prepare();
             }
             if (!cornelia.isPlaying()) {
             	cornelia.seekTo(0);
@@ -104,19 +104,20 @@ public class SelectPointActivity extends Activity {
         }
     
 	}
-
-	public void onCloseClick(View view) {
-		showMessage = false;
-		//if (l == R.layout.pointselectedlayout || l == R.layout.point3layout) {
-			if (cornelia.isPlaying()) {
-				cornelia.stop();
-			}
-			//if (l == R.layout.pointselectedlayout)
-				if (mp2.isPlaying()) {
-					mp2.stop();
-				}
-		//}
-		finish();
+	
+	protected void stopPlayers() {
+		Log.v("Hit method", "stopping players");
+		Log.v("Hit method", "stopping players2");
+		if (cornelia != null && cornelia.isPlaying()) {
+			cornelia.stop();
+		}
+		if (manley != null && manley.isPlaying()) {
+			manley.stop();
+		}
 	}
 
+	public void onCloseClick(View view) {
+		stopPlayers();
+		finish();
+	}
 }

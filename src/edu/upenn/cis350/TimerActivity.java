@@ -6,58 +6,54 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
+import java.util.HashSet;
 
 public class TimerActivity extends SelectPointActivity {
-	boolean stop;
+	HashSet<CountDownTimer> timers;
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-		stop = false;
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.pointselectedlayout);
-        
+
+        timers = new HashSet<CountDownTimer>();
         
         Bundle b = getIntent().getExtras();
 		int l = 0;
 		l = b.getInt("layout");
-	    //setContentView(l);
-		showMessage = true;
-	    
 	    
 	    if (l == R.layout.pointlayouttwo) {
 	    	makeTimedMessage(3, "You've come to the medic with a wounded leg to be amputated!");
-	    	makeTimedMessage(10, "You take a drink of whiskey...");
-	    	makeTimedMessage(16, "The medic has made his first incision.");
-	    	makeTimedMessage(24, 300, "He's hit your thighbone, time for the saw...");
-	    	makeTimedMessage(30, 700, "Through the bone.");
-	    	makeTimedMessage(40, "Your leg has now been fully removed");
+	    	makeTimedMessage(8, "You take a drink of whiskey...");
+	    	makeTimedMessage(13, "The medic has made his first incision.");
+	    	makeTimedMessage(19, 300, "He's hit your thighbone, time for the saw...");
+	    	makeTimedMessage(25, 700, "Through the bone.");
+	    	makeTimedMessage(30, "Your leg has now been fully removed");
+	    }
+	    
+	    for(CountDownTimer t : timers) {
+	    	t.start();
 	    }
 	}
 	
 	//makes a toast based on absolute time after opening exhibit and what message to display
 	//overload lets you specify a vibration time in milliseconds
 	public void makeTimedMessage (int t, final String s) {
-		if (showMessage == false)
-			return;
-		new CountDownTimer(t*1000, 1000) {
+		timers.add(new CountDownTimer(t*1000, 1000) {
     		public void onTick(long millisUntilFinished) {
     	        
     	    }
 
     	    public void onFinish() {
-    	    	if(!stop) {
 	    	    	Toast toast = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
 	    	    	toast.show();
-    	    	}
     	    }
-    	}.start();
+    	});
 	}
 	
 	public void makeTimedMessage (int t, final int vt, final String s) {
-		if (showMessage == false)
-			return;
-		new CountDownTimer(t*1000, 1000) {
+		timers.add(new CountDownTimer(t*1000, 1000) {
     		public void onTick(long millisUntilFinished) {
     	        
     	    }
@@ -68,12 +64,32 @@ public class TimerActivity extends SelectPointActivity {
     	    	Toast toast = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG);
     	    	toast.show();
     	    }
-    	}.start();
+    	});
+	}
+	
+	private void stopTimers() {
+		for(CountDownTimer t : timers) {
+			t.cancel();
+		}
 	}
 	
 	public void onCloseClick(View view) {
-		stop = true;
+		super.stopPlayers();
+		Log.v("executing method:", "TimerActivity.onCloseClick()");
+		stopTimers();
 		finish();
 		return;
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		super.stopPlayers();
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+		    Log.d("event:","Back key pressed");
+		   	stopTimers();
+		    finish();
+		    return true;
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 }

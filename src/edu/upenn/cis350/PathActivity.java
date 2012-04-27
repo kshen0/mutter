@@ -184,7 +184,5 @@ public class PathActivity extends Activity {
 	public void onNewPathClick(View view){
 		finish = System.currentTimeMillis();
 		showDialog(DEATHS_DIALOG);
-		System.gc();
-		finish();
 	}
 }
