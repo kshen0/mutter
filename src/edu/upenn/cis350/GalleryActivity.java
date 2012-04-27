@@ -20,7 +20,16 @@ public class GalleryActivity extends Activity{
             R.drawable.hospital1,
             R.drawable.hospital2,
             R.drawable.nurse,
+            R.drawable.contraband
     };
+	String[] imageStrings = {
+			"An African American soldier",
+			"A portrait of Hancock Cornelia",
+			"A view of a hospital",
+			"An alternate view of a hospital",
+			"A nurse sits with her patient",
+			"An injured contraband"
+	};
 	
 	@Override    
     public void onCreate(Bundle savedInstanceState) 
@@ -38,6 +47,9 @@ public class GalleryActivity extends Activity{
             {                
             	ImageView imageView = (ImageView) findViewById(R.id.image1);                
                 imageView.setImageResource(imageIDs[position]);
+                Toast.makeText(getBaseContext(), 
+                        imageStrings[position], 
+                        Toast.LENGTH_SHORT).show();
             }
         }); 
     }

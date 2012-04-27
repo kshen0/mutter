@@ -42,7 +42,7 @@
 	    <TextView
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:text="@string/lipsum"
+	        android:text="@string/blacksoldiers"
 	        android:paddingLeft="12dp"
 	        android:paddingRight="12dp"
 	        android:textColor="#FFF" />
