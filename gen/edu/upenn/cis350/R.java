@@ -40,6 +40,7 @@ public final class R {
         public static final int sdl=0x7f02001a;
         public static final int solder=0x7f02001b;
         public static final int speaker=0x7f02001c;
+        public static final int speakericon=0x7f02001d;
     }
     public static final class id {
         public static final int AASoldier_button=0x7f060008;
