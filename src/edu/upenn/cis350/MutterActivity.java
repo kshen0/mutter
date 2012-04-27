@@ -69,8 +69,8 @@ public class MutterActivity extends Activity {
 	 */
 	private void setupPoints(int ID) {
 		// ID determines which points to set up
-		// 0 -> Nurse path
-		// 1 -> African American soldier path
+		// 0 -> Normal button icon
+		// 1 -> Sound button icon
 
 		// set up point coordinates for nurse
 		//An ArrayList of values needed for points (x coordinate, y coordinate, and ID for what kind of icon
@@ -83,7 +83,7 @@ public class MutterActivity extends Activity {
 			points.clear();
 			points.add(173); //P1 x
 			points.add(209); //P1 y
-			points.add(0); //P1 iconID
+			points.add(1); //P1 iconID
 			points.add(R.layout.nursepoint); //P1 layout
 			points.add(148); //P2 x
 			points.add(356); //P2 y
@@ -98,8 +98,12 @@ public class MutterActivity extends Activity {
 		if (ID == 1){ //African American Soldier
 			points.add(170); //P1 x
 			points.add(220); //P1 y
-			points.add(0);
+			points.add(1);
 			points.add(R.layout.pointselectedlayout); 
+			points.add(50);
+			points.add(50);
+			points.add(0);
+			points.add(R.layout.aa_point_two);
 			
 			
 			pointCoords.put(R.layout.africansoldierlayout, points);
