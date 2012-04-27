@@ -32,9 +32,10 @@ public class Point extends ImageView{
 		if (iconID == 1)
 			icon = getResources().getDrawable(R.drawable.speakericon);
 		else if (layoutID == R.layout.nurselayout)
-			icon = getResources().getDrawable(R.drawable.button_off_small_padded);
+			//icon = getResources().getDrawable(R.drawable.button_off_small_padded);
+			icon = getResources().getDrawable(R.drawable.blue45);
 		else 
-			icon = getResources().getDrawable(R.drawable.button_on_small_padded);
+			icon = getResources().getDrawable(R.drawable.orange45);
 		setImageDrawable(icon);
 		this.x = dipToPx(x);
 		this.y = dipToPx(y);
@@ -48,7 +49,7 @@ public class Point extends ImageView{
 	public Point(Context c, AttributeSet a) {
 		super(c, a);
 
-		icon = getResources().getDrawable(R.drawable.button_on_small_padded);
+		icon = getResources().getDrawable(R.drawable.blue45);
 		setImageDrawable(icon);
 		x = 0;
 		y = 0;
