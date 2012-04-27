@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:background="@+drawable/africansoldier_background"
+        android:layout_above="@+id/african_close_button">
+       
+        <edu.upenn.cis350.ExhibitView
+            android:id="@+id/exhibitView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" 
+           />
+    </FrameLayout>
+     <Button
+        android:id="@+id/african_close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Path"
+        android:onClick="onNewPathClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+    
+    </RelativeLayout>
+
+</LinearLayout>

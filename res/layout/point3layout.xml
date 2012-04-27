@@ -31,11 +31,11 @@
 	        android:layout_height="wrap_content"
 	        >
 		    <Button
-		        android:id="@+id/audio_button"
+		        android:id="@+id/Manley_Stacy_audio_button"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Manley Stacy Letter"
-		        android:onClick="onClick"
+		        android:onClick="onClickManleyStacy"
 		        />
 		    </LinearLayout>
 	        

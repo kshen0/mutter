@@ -6,5 +6,5 @@
 *.swp
 *~
 .classpath
-gen/
 bin/
+bin/*

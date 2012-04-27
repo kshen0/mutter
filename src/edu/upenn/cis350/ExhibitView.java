@@ -31,8 +31,8 @@ public class ExhibitView extends View {
 		super(con, a);
 		initialize(con);
 		//setUpPoints();
-		Drawable bg = Drawable.createFromPath("@drawable/floorplan");
-		setBackgroundDrawable(bg);
+		//Drawable bg = Drawable.createFromPath("@drawable/floorplan");
+		//setBackgroundDrawable(bg);
 	}
 	
 	private void initialize(Context con) {
@@ -55,8 +55,8 @@ public class ExhibitView extends View {
 		points.put(p3, R.layout.point3layout);
 	}
 	*/
-	public void addPoint(int x, int y, int side, int layout) {
-		points.put(new Point(context, x, y, side), layout);
+	public void addPoint(int x, int y, int side, int iconID, int layout, int layoutID) {
+		points.put(new Point(context, x, y, side, iconID, layoutID), layout);
 	}
 	
 	protected void onDraw(Canvas canvas) {

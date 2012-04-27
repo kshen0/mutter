@@ -4,6 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-sdk android:minSdkVersion="10" />
 
     <application
@@ -30,6 +31,19 @@
             android:name=".AudioPlayer"
             android:label="Audio Player"
             />
+        <activity
+            android:name=".PathActivity"
+            android:label="Path Activity"
+            />
+        <activity
+            android:name=".TimerActivity"
+            android:label="Timer Activity"
+            />
+        <activity
+            android:name=".GalleryActivity"
+            android:label="Gallery Activity"
+            />
     </application>
+    
 
 </manifest>

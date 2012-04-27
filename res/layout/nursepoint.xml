@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    >
+	    
+	    <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="0.25in"
+	        android:paddingRight="0.25in"
+	        android:layout_gravity="center_horizontal"
+			android:src="@drawable/nurse" />
+	    
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:orientation="horizontal"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        >
+		    <Button
+		        android:id="@+id/audio_button"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Cornelia Hancock Letter"
+		        android:onClick="onClickCornelia"
+		        />
+		    
+		    <Button
+		        android:id="@+id/audio_button2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Manley Stacy Letter"
+		        android:onClick="onClickManleyStacy"
+		        />
+		    </LinearLayout>
+	    
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/lipsum"
+	        android:paddingLeft="12dp"
+	        android:paddingRight="12dp"
+	        android:textColor="#FFF" />
+	        
+	    <Button
+	        android:id="@+id/closebutton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Close" 
+	        android:onClick="onCloseClick"/>
+	    </LinearLayout>
+    </ScrollView>
