@@ -5,9 +5,9 @@
     <string name="app_name">Mutter Museum</string>
     <string name="ok">OK</string>
 	<string name="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet odio in odio consequat congue. Mauris vehicula lectus at velit congue convallis. Sed at ante ipsum, ac gravida sem. Donec quis turpis et arcu ornare lacinia. Integer tristique, diam at consequat blandit, nunc lacus dapibus neque, sit amet egestas eros ligula eu mauris. Donec at nisi odio. Nulla ut metus odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet odio in odio consequat congue. Mauris vehicula lectus at velit congue convallis. Sed at ante ipsum, ac gravida sem. Donec quis turpis et arcu ornare lacinia. Integer tristique, diam at consequat blandit, nunc lacus dapibus neque, sit amet egestas eros ligula eu mauris. Donec at nisi odio. Nulla ut metus odio.</string>
-	<string name="lipsum2">Field hospital, battle of Gettysburg. </string>
-	<string name="h1">Pictured: a hospital</string>
-	<string name="h2">A different view</string>
+	<string name="lipsum2">Field hospital, battle of Gettysburg.</string>
+	<string name="h1">At the outbreak of the war the United States Surgeon General\'s office consisted of a total of 115 surgeons; 24 of these resigned to form the nucleus of the Confederate medical services. Eventually both services were vastly-but quite inadequately-expanded. Nursing services, too, were primitive.</string>
+	<string name="h2"> The army still relied on male nurses, most of them quite untrained. At the outbreak of the war the famous humanitarian, Dorothea Dix, hurried to Washington to offer her services; she was appointed Superintendent of Women Nurses, but never allowed any real independence.</string>
 	<string name="x">An African American solider.</string>
 	<string name="closeMedia">onCloseClick</string>
 	<string name="quote">&quot;'Once let the black man get upon his person the brass letter, U.S., let him get an eagle on his button, and a musket on his shoulder and bullets in his pocket, there is no power on earth that can deny that he has earned the right to citizenship.'&quot;</string>
