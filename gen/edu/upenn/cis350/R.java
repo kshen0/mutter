@@ -73,6 +73,7 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050001;
+        public static final int blacksoldiers=0x7f05000b;
         public static final int closeMedia=0x7f050008;
         public static final int h1=0x7f050005;
         public static final int h2=0x7f050006;

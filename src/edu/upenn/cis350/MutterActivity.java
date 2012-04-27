@@ -14,7 +14,7 @@ public class MutterActivity extends Activity {
 	// map containing key: layout id, value: int array of 3 values (x, y, button
 	// side length)
 	private HashMap<Integer, ArrayList<Integer>> pointCoords;
-	private static final int SIDE = 45;
+	private static final int SIDE = 30;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -82,15 +82,15 @@ public class MutterActivity extends Activity {
 		if (ID == 0) {  //Nurse
 			points.clear();
 			points.add(173); //P1 x
-			points.add(209); //P1 y
+			points.add(240); //P1 y
 			points.add(1); //P1 iconID
 			points.add(R.layout.nursepoint); //P1 layout
-			points.add(148); //P2 x
-			points.add(356); //P2 y
+			points.add(145); //P2 x
+			points.add(410); //P2 y
 			points.add(0); //P2 iconID
 			points.add(R.layout.pointlayouttwo);
-			points.add(30);  //P3 x
-			points.add(130); //P3 y
+			points.add(10);  //P3 x
+			points.add(152); //P3 y
 			points.add(1); //P3 iconID
 			points.add(R.layout.point3layout);
 			pointCoords.put(R.layout.nurselayout, points);
