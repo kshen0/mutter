@@ -34,6 +34,7 @@ public final class R {
         public static final int sdl=0x7f020014;
         public static final int solder=0x7f020015;
         public static final int speakericon=0x7f020016;
+        public static final int staceymanley=0x7f020017;
     }
     public static final class id {
         public static final int AASoldier_button=0x7f06000a;
@@ -73,6 +74,7 @@ public final class R {
         public static final int a2=0x7f040001;
         public static final int hancock_cornelia_1=0x7f040002;
         public static final int johnnycomesmarchinghome=0x7f040003;
+        public static final int smithdavid=0x7f040004;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
@@ -83,6 +85,7 @@ public final class R {
         public static final int hello=0x7f050000;
         public static final int lipsum=0x7f050003;
         public static final int lipsum2=0x7f050004;
+        public static final int manleystacey=0x7f05000c;
         public static final int ok=0x7f050002;
         public static final int quote=0x7f050009;
         public static final int quotedperson=0x7f05000a;

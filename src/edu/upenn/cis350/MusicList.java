@@ -27,7 +27,7 @@ public class MusicList extends ListActivity {
 	  lastClicked = -1;
 	  mp = null;
 	  
-	  final String[] NAMES = new String[] {"Manley Stacey", "Cornelia Hancock", "Johnny Comes Marching Home", "Audio 4"};
+	  final String[] NAMES = new String[] {"Manley Stacey", "Cornelia Hancock", "Johnny Comes Marching Home", "Smith David"};
 	  setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, NAMES));
 
 	  ListView lv = getListView();
@@ -58,6 +58,9 @@ public class MusicList extends ListActivity {
 	    	}
 	    	else if (position == 2) {
 	    		managePlayer(R.raw.johnnycomesmarchinghome);
+	    	}
+	    	else if (position == 3) {
+	    		managePlayer(R.raw.smithdavid);
 	    	}
 	    	lastClicked = position;
 	    }

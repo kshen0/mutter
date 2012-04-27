@@ -15,28 +15,27 @@
 	        android:paddingLeft="0.25in"
 	        android:paddingRight="0.25in"
 	        android:layout_gravity="center_horizontal"
-			android:src="@drawable/sdl" />
-	    
-	    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:text="@string/lipsum2"
-		        android:paddingLeft="12dp"
-		        android:paddingRight="12dp"
-		        android:textColor="#FFF" />
+			android:src="@drawable/staceymanley" />
+	    <Button
+	        android:id="@+id/Manley_Stacy_audio_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Manley Stacy Letter"
+	        android:onClick="onClickManleyStacy"
+	        />
 	    
 	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	        android:orientation="horizontal"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        >
-		    <Button
-		        android:id="@+id/Manley_Stacy_audio_button"
-		        android:layout_width="wrap_content"
+		    <TextView
+		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:text="Manley Stacy Letter"
-		        android:onClick="onClickManleyStacy"
-		        />
+		        android:text="@string/manleystacey"
+		        android:paddingLeft="12dp"
+		        android:paddingRight="12dp"
+		        android:textColor="#FFF" />
 		    </LinearLayout>
 	        
 	    <Button

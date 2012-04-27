@@ -185,4 +185,10 @@ public class PathActivity extends Activity {
 		finish = System.currentTimeMillis();
 		showDialog(DEATHS_DIALOG);
 	}
+	
+	@Override
+	public void onBackPressed() {
+		finish = System.currentTimeMillis();
+		showDialog(DEATHS_DIALOG);
+	}
 }
