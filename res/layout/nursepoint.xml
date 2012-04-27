@@ -26,7 +26,7 @@
 		        android:id="@+id/audio_button"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="Cornelia Hancock Letter"
+		        android:text="Cornelia Hancock - 1"
 		        android:onClick="onClickCornelia"
 		        />
 		    
@@ -34,8 +34,8 @@
 		        android:id="@+id/audio_button2"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="Manley Stacy Letter"
-		        android:onClick="onClickManleyStacy"
+		        android:text="Cornelia Hancock - 2"
+		        android:onClick="onClickCornelia2"
 		        />
 		    </LinearLayout>
 	    

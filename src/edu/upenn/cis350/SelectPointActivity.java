@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class SelectPointActivity extends Activity {
 
 	MediaPlayer cornelia;  //Cornelia
+	MediaPlayer cornelia2;  //Cornelia
 	MediaPlayer manley;   //manley stacy
 
 	int l = 0;
@@ -32,6 +33,7 @@ public class SelectPointActivity extends Activity {
         setContentView(l);
         
         cornelia = MediaPlayer.create(SelectPointActivity.this, R.raw.a1); //Cornelia
+        cornelia2 = MediaPlayer.create(SelectPointActivity.this, R.raw.hancock_cornelia_2); //Cornelia
     	manley = MediaPlayer.create(SelectPointActivity.this, R.raw.a2);  //manley stacy
 	}
 	
@@ -46,6 +48,12 @@ public class SelectPointActivity extends Activity {
             	cornelia.stop();
             	cornelia.prepare();
             }
+            if (cornelia2.isPlaying()) {
+            	cornelia2.seekTo(0);
+            	cornelia2.stop();
+            	cornelia2.prepare();
+            }
+            
             if (!manley.isPlaying()) {  // If manley is not playing, start it.
             	manley.seekTo(0);
             	manley.start();
@@ -55,6 +63,7 @@ public class SelectPointActivity extends Activity {
             	manley.stop();
             	manley.prepare();
             }
+            
             manley.setOnCompletionListener(new OnCompletionListener(){
                 public void onCompletion(MediaPlayer arg0) {
                     
@@ -81,11 +90,18 @@ public class SelectPointActivity extends Activity {
             	manley.stop();
             	manley.prepare();
             }
-            if (!cornelia.isPlaying()) {
+            
+            if (cornelia2.isPlaying()) {
+            	cornelia2.seekTo(0);
+            	cornelia2.stop();
+            	cornelia2.prepare();
+            }
+            
+            if (!cornelia.isPlaying()) {  // If cornelia is not playing, start it.
             	cornelia.seekTo(0);
             	cornelia.start();
             }
-            else if (cornelia.isPlaying()) {
+            else if (cornelia.isPlaying()) { // If cornelia is playing, stop it.  
             	cornelia.seekTo(0);
             	cornelia.stop();
             	cornelia.prepare();
@@ -102,7 +118,51 @@ public class SelectPointActivity extends Activity {
     	catch (Exception e) {
         	Log.e("err", "error: " + e.getMessage(), e);
         }
-    
+	}
+	
+	public void onClickCornelia2(View view){
+		try {
+    		Log.v("Status:", "Playing that funky music, white boy");
+            //MediaPlayer mp = MediaPlayer.create(SelectPointActivity.this, R.raw.a1);
+            Log.v("Status:", "Media loaded");
+            //mp.prepare();
+            //mp.start();
+            
+            Log.v("Status:", "Can you hear me now?");
+            
+            if (manley.isPlaying()) {
+            	manley.seekTo(0);
+            	manley.stop();
+            	manley.prepare();
+            }
+            if (cornelia.isPlaying()) {
+            	cornelia.seekTo(0);
+            	cornelia.stop();
+            	cornelia.prepare();
+            }
+            
+            if (!cornelia2.isPlaying()) {  // If cornelia2 is not playing, start it.
+            	cornelia2.seekTo(0);
+            	cornelia2.start();
+            }
+            else if (cornelia2.isPlaying()) { // If cornelia2 is playing, stop it.  
+            	cornelia2.seekTo(0);
+            	cornelia2.stop();
+            	cornelia2.prepare();
+            }
+
+            
+            
+            cornelia2.setOnCompletionListener(new OnCompletionListener(){
+                public void onCompletion(MediaPlayer arg0) {
+                    
+                }
+            });
+            
+    	}
+    	catch (Exception e) {
+        	Log.e("err", "error: " + e.getMessage(), e);
+        }
 	}
 	
 	protected void stopPlayers() {
@@ -114,10 +174,16 @@ public class SelectPointActivity extends Activity {
 		if (manley != null && manley.isPlaying()) {
 			manley.stop();
 		}
+		if (cornelia2 != null && cornelia2.isPlaying()) {
+			cornelia2.stop();
+		}
 	}
 
 	public void onCloseClick(View view) {
 		stopPlayers();
+		cornelia.release();
+		cornelia2.release();
+		manley.release();
 		finish();
 	}
 }
