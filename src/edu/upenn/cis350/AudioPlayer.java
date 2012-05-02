@@ -29,7 +29,9 @@ public class AudioPlayer extends Activity implements OnPreparedListener, MediaCo
     setContentView(R.layout.audio_player);
     
     Bundle b = getIntent().getExtras();
-    filename = b.getString("filename");
+    if (b != null){
+    	filename = b.getString("filename");
+    }
     
     audioFile = this.getIntent().getStringExtra(filename);
     ((TextView)findViewById(R.id.now_playing_text)).setText(audioFile);
