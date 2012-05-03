@@ -20,8 +20,10 @@ public class TimerActivity extends SelectPointActivity {
         timers = new HashSet<CountDownTimer>();
         
         Bundle b = getIntent().getExtras();
-		int l = 0;
-		l = b.getInt("layout");
+        if (b != null){
+        	int l = 0;
+        	l = b.getInt("layout");
+        }
 	    
 	    if (l == R.layout.pointlayouttwo) {
 	    	makeTimedMessage(3, "You've come to the medic with a wounded leg to be amputated!");
@@ -42,7 +44,7 @@ public class TimerActivity extends SelectPointActivity {
 	public void makeTimedMessage (int t, final String s) {
 		timers.add(new CountDownTimer(t*1000, 1000) {
     		public void onTick(long millisUntilFinished) {
-    	        
+    	        //no-op
     	    }
 
     	    public void onFinish() {
