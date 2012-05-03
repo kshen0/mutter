@@ -67,7 +67,7 @@ public class MutterActivity extends Activity {
 	 * ExhibitView problem: gracefully passing which id is connected to which
 	 * point
 	 */
-	private void setupPoints(int ID) {
+	public ArrayList<Integer> setupPoints(int ID) {
 		// ID determines which points to set up
 		// 0 -> Normal button icon
 		// 1 -> Sound button icon
@@ -108,5 +108,6 @@ public class MutterActivity extends Activity {
 			
 			pointCoords.put(R.layout.africansoldierlayout, points);
 		}
+		return points;
 	}
 }
